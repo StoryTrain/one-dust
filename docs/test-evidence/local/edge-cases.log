@@ -1,0 +1,11 @@
+Compiling 31 files with Solc 0.8.37
+Solc 0.8.37 finished in 1.87s
+Compiler run successful!
+
+Ran 3 tests for test/OneDustEdgeCases.t.sol:OneDustEdgeCasesTest
+[PASS] test_FrozenOwnerOrSpenderCannotRevokeAllowanceWithApproveZero() (gas: 341824)
+[PASS] test_SuccessfulFrozenBurnDoesNotEnableOrdinaryFrozenBurn() (gas: 408450)
+[PASS] test_TransferFromToFrozenRecipientRestoresFiniteAllowanceOnRevert() (gas: 275875)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 28.75ms (6.15ms CPU time)
+
+Ran 1 test suite in 47.06ms (28.75ms CPU time): 3 tests passed, 0 failed, 0 skipped (3 total tests)

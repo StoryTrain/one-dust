@@ -1,0 +1,646 @@
+{
+  "schema_version": 1,
+  "record_type": "supplementary_testnet_verification",
+  "network": {
+    "chain_id": 97,
+    "contract": "0x90d12fc13a445337285ae94f4a83295058076e1d"
+  },
+  "status": "PASS",
+  "scope": [
+    "Historical verification reports; no new network queries.",
+    "Receipt blocks identify the recorded transactions.",
+    "State observations generally used latest with independent calls, not one fixed block.",
+    "Before/after fields describe simulation-batch observations, not transaction pre/post-state.",
+    "Successful simulated mint, burn or transfer did not persist those simulated changes.",
+    "Final observations are historical, not a statement of current chain state."
+  ],
+  "records": [
+    {
+      "id": "frozen_spender",
+      "started_utc": "2026-10-19T21:02:36.256406+00:00",
+      "network_expected": 97,
+      "token": "0x90d12Fc13A445337285Ae94F4a83295058076E1d",
+      "transaction_hash": "0x0931b14fbb7a4790e20b1b68096012cd85e08421244796daf3ce572529f2b0e2",
+      "state_query_mode": "latest; independent calls, not one fixed block",
+      "checks": [
+        {
+          "check": "BSC testnet chain ID is 97",
+          "status": "PASS"
+        },
+        {
+          "check": "Freeze transaction succeeded",
+          "status": "PASS"
+        },
+        {
+          "check": "Receipt hash matches",
+          "status": "PASS"
+        },
+        {
+          "check": "Receipt sender is Compliance",
+          "status": "PASS"
+        },
+        {
+          "check": "Receipt target is the token",
+          "status": "PASS"
+        },
+        {
+          "check": "Transaction calldata is freeze(spender)",
+          "status": "PASS"
+        },
+        {
+          "check": "Transaction sender matches",
+          "status": "PASS"
+        },
+        {
+          "check": "Transaction target matches",
+          "status": "PASS"
+        },
+        {
+          "check": "Transaction value is zero",
+          "status": "PASS"
+        },
+        {
+          "check": "AddressFrozen event matches spender and Compliance",
+          "status": "PASS"
+        },
+        {
+          "check": "Frozen-spender starting state matches expectations",
+          "status": "PASS"
+        },
+        {
+          "check": "Frozen spender transferFrom: expected spender-is-frozen revert",
+          "status": "PASS"
+        },
+        {
+          "check": "Frozen spender burnFrom: expected spender-is-frozen revert",
+          "status": "PASS"
+        },
+        {
+          "check": "Cannot approve frozen spender: expected spender-is-frozen revert",
+          "status": "PASS"
+        },
+        {
+          "check": "Balances, allowance, supply and freeze flags unchanged",
+          "status": "PASS"
+        }
+      ],
+      "receipt_block": 137766951,
+      "receipt_block_hash": "0x5206e1aee860c871ee524ccee41a5ffbcbd6c03d79cb263bdbf112e03b206150",
+      "before": {
+        "spender_frozen": "true",
+        "walletA_frozen": "false",
+        "walletB_frozen": "false",
+        "walletA_balance": "8790000000000000000000",
+        "walletB_balance": "2200000000000000000000",
+        "allowance": "400000000000000000000",
+        "supply": "50000490000000000000000000"
+      },
+      "after": {
+        "spender_frozen": "true",
+        "walletA_frozen": "false",
+        "walletB_frozen": "false",
+        "walletA_balance": "8790000000000000000000",
+        "walletB_balance": "2200000000000000000000",
+        "allowance": "400000000000000000000",
+        "supply": "50000490000000000000000000"
+      },
+      "status": "PASS",
+      "finished_utc": "2026-10-19T21:03:15.222141+00:00"
+    },
+    {
+      "id": "spender_unfreeze",
+      "started_utc": "2026-10-19T21:08:23.986365+00:00",
+      "network_expected": 97,
+      "token": "0x90d12Fc13A445337285Ae94F4a83295058076E1d",
+      "transaction_hash": "0xd2f5622d69dc128ba9c08632b5aa49b9c019c952167594d0c56e5e8c0b04f635",
+      "state_query_mode": "latest; independent calls, not one fixed block",
+      "checks": [
+        {
+          "check": "BSC testnet chain ID is 97",
+          "status": "PASS"
+        },
+        {
+          "check": "Unfreeze transaction succeeded",
+          "status": "PASS"
+        },
+        {
+          "check": "Receipt hash matches",
+          "status": "PASS"
+        },
+        {
+          "check": "Receipt sender is Compliance",
+          "status": "PASS"
+        },
+        {
+          "check": "Receipt target is the token",
+          "status": "PASS"
+        },
+        {
+          "check": "Unfreeze receipt is later than the verified freeze block",
+          "status": "PASS"
+        },
+        {
+          "check": "Transaction calldata is unfreeze(spender)",
+          "status": "PASS"
+        },
+        {
+          "check": "Transaction sender matches",
+          "status": "PASS"
+        },
+        {
+          "check": "Transaction target matches",
+          "status": "PASS"
+        },
+        {
+          "check": "Transaction value is zero",
+          "status": "PASS"
+        },
+        {
+          "check": "Transaction and receipt block hashes match",
+          "status": "PASS"
+        },
+        {
+          "check": "AddressUnfrozen event matches spender and Compliance",
+          "status": "PASS"
+        },
+        {
+          "check": "Spender unfrozen; balances, allowance and supply match pre-freeze values",
+          "status": "PASS"
+        },
+        {
+          "check": "TransferFrom restored after unfreeze: expected successful return",
+          "status": "PASS"
+        },
+        {
+          "check": "BurnFrom restored after unfreeze: expected successful return",
+          "status": "PASS"
+        },
+        {
+          "check": "Approve to spender restored after unfreeze: expected successful return",
+          "status": "PASS"
+        },
+        {
+          "check": "State unchanged after independent restoration simulations",
+          "status": "PASS"
+        }
+      ],
+      "receipt_block": 137767897,
+      "receipt_block_hash": "0x775ae7c67a7e56f6c4685bbb8ba66fcf3510dfa1c1171107ebe85e87082db5ab",
+      "before": {
+        "spender_frozen": "false",
+        "walletA_frozen": "false",
+        "walletB_frozen": "false",
+        "walletA_balance": "8790000000000000000000",
+        "walletB_balance": "2200000000000000000000",
+        "allowance": "400000000000000000000",
+        "supply": "50000490000000000000000000"
+      },
+      "after": {
+        "spender_frozen": "false",
+        "walletA_frozen": "false",
+        "walletB_frozen": "false",
+        "walletA_balance": "8790000000000000000000",
+        "walletB_balance": "2200000000000000000000",
+        "allowance": "400000000000000000000",
+        "supply": "50000490000000000000000000"
+      },
+      "status": "PASS",
+      "finished_utc": "2026-10-19T21:08:56.536709+00:00",
+      "related_freeze_transaction": "0x0931b14fbb7a4790e20b1b68096012cd85e08421244796daf3ce572529f2b0e2"
+    },
+    {
+      "id": "temporary_treasury_role",
+      "started_utc": "2026-10-19T21:35:57.637350+00:00",
+      "network_expected": 97,
+      "token": "0x90d12Fc13A445337285Ae94F4a83295058076E1d",
+      "transaction_hash": "0x51a69b6b58bf650492a02a2268672e114434625bac7f7bd918166616f15e7807",
+      "state_query_mode": "latest; independent calls",
+      "checks": [
+        {
+          "check": "BSC testnet chain ID is 97",
+          "status": "PASS"
+        },
+        {
+          "check": "Role-grant transaction succeeded",
+          "status": "PASS"
+        },
+        {
+          "check": "Receipt hash matches",
+          "status": "PASS"
+        },
+        {
+          "check": "Receipt sender is Admin",
+          "status": "PASS"
+        },
+        {
+          "check": "Receipt target is the token",
+          "status": "PASS"
+        },
+        {
+          "check": "Calldata grants only Treasury role to treasury2",
+          "status": "PASS"
+        },
+        {
+          "check": "Transaction sender matches",
+          "status": "PASS"
+        },
+        {
+          "check": "Transaction target matches",
+          "status": "PASS"
+        },
+        {
+          "check": "Transaction value is zero",
+          "status": "PASS"
+        },
+        {
+          "check": "Transaction and receipt block hashes match",
+          "status": "PASS"
+        },
+        {
+          "check": "RoleGranted event matches role, treasury2 and Admin",
+          "status": "PASS"
+        },
+        {
+          "check": "Treasury role active; treasury2 unfrozen; balance and supply unchanged",
+          "status": "PASS"
+        },
+        {
+          "check": "Minter can mint to unfrozen treasury2 in simulation",
+          "status": "PASS"
+        },
+        {
+          "check": "Compliance can freeze treasury2 in simulation",
+          "status": "PASS"
+        },
+        {
+          "check": "Simulations did not change role, freeze flag, balance or supply",
+          "status": "PASS"
+        }
+      ],
+      "receipt_block": 137770815,
+      "receipt_block_hash": "0x159b488bd71ebfceb137098511fe7e8584b02504856f43fcc462ba6a616d2690",
+      "before": {
+        "treasury_role": "true",
+        "frozen": "false",
+        "balance": "500000000000000000000",
+        "supply": "50000490000000000000000000"
+      },
+      "after": {
+        "treasury_role": "true",
+        "frozen": "false",
+        "balance": "500000000000000000000",
+        "supply": "50000490000000000000000000"
+      },
+      "status": "PASS",
+      "finished_utc": "2026-10-19T21:36:18.748604+00:00",
+      "target": "0x8B017A4068C4Af2346F5076770c06c4216cA11BF",
+      "role": "0xe1dcbdb91df27212a29bc27177c840cf2f819ecf2187432e1fac86c2dd5dfca9"
+    },
+    {
+      "id": "frozen_treasury_and_oversized_burn",
+      "started_utc": "2026-10-19T21:46:41.623077+00:00",
+      "network_expected": 97,
+      "token": "0x90d12Fc13A445337285Ae94F4a83295058076E1d",
+      "transaction_hash": "0xfbbf0ac27e63b7874e6e090e4056704339fbad2b1557a8a73613d40748384ed4",
+      "state_query_mode": "latest; independent calls",
+      "checks": [
+        {
+          "check": "BSC testnet chain ID is 97",
+          "status": "PASS"
+        },
+        {
+          "check": "Treasury2 freeze transaction succeeded",
+          "status": "PASS"
+        },
+        {
+          "check": "Receipt hash matches",
+          "status": "PASS"
+        },
+        {
+          "check": "Receipt sender is Compliance",
+          "status": "PASS"
+        },
+        {
+          "check": "Receipt target is the token",
+          "status": "PASS"
+        },
+        {
+          "check": "Freeze is later than the verified Treasury-role grant",
+          "status": "PASS"
+        },
+        {
+          "check": "Calldata is freeze(treasury2)",
+          "status": "PASS"
+        },
+        {
+          "check": "Transaction sender matches",
+          "status": "PASS"
+        },
+        {
+          "check": "Transaction target matches",
+          "status": "PASS"
+        },
+        {
+          "check": "Transaction value is zero",
+          "status": "PASS"
+        },
+        {
+          "check": "Transaction and receipt block hashes match",
+          "status": "PASS"
+        },
+        {
+          "check": "AddressFrozen event matches treasury2 and Compliance",
+          "status": "PASS"
+        },
+        {
+          "check": "Minter caller has active Minter role",
+          "status": "PASS"
+        },
+        {
+          "check": "Burner caller has active Burner role",
+          "status": "PASS"
+        },
+        {
+          "check": "Frozen Treasury starting state matches expectations",
+          "status": "PASS"
+        },
+        {
+          "check": "Mint to frozen Treasury: expected revert verified",
+          "status": "PASS"
+        },
+        {
+          "check": "BurnFrozen 501 tokens with balance 500: expected revert verified",
+          "status": "PASS"
+        },
+        {
+          "check": "Failed burn preserved balances, supply, Treasury role and freeze flags",
+          "status": "PASS"
+        },
+        {
+          "check": "Frozen Treasury transfer after failed burn: expected revert verified",
+          "status": "PASS"
+        },
+        {
+          "check": "Final state unchanged after all independent simulations",
+          "status": "PASS"
+        }
+      ],
+      "receipt_block": 137772723,
+      "receipt_block_hash": "0x10fb328af70a4580a726273a5550143157859485d067d3c98bc77c49c365ab5a",
+      "before": {
+        "treasury_role": "true",
+        "treasury2_frozen": "true",
+        "walletB_frozen": "false",
+        "treasury2_balance": "500000000000000000000",
+        "walletB_balance": "2200000000000000000000",
+        "supply": "50000490000000000000000000"
+      },
+      "after": {
+        "treasury_role": "true",
+        "treasury2_frozen": "true",
+        "walletB_frozen": "false",
+        "treasury2_balance": "500000000000000000000",
+        "walletB_balance": "2200000000000000000000",
+        "supply": "50000490000000000000000000"
+      },
+      "status": "PASS",
+      "finished_utc": "2026-10-19T21:47:25.403656+00:00",
+      "target": "0x8B017A4068C4Af2346F5076770c06c4216cA11BF",
+      "oversized_burn_base_units": "501000000000000000000",
+      "expected_oversized_burn_error": "0xe450d38c0000000000000000000000008b017a4068c4af2346f5076770c06c4216ca11bf00000000000000000000000000000000000000000000001b1ae4d6e2ef50000000000000000000000000000000000000000000000000001b28c58d9696b40000",
+      "after_failed_burn": {
+        "treasury_role": "true",
+        "treasury2_frozen": "true",
+        "walletB_frozen": "false",
+        "treasury2_balance": "500000000000000000000",
+        "walletB_balance": "2200000000000000000000",
+        "supply": "50000490000000000000000000"
+      }
+    },
+    {
+      "id": "treasury_unfreeze",
+      "started_utc": "2026-10-19T21:55:29.215662+00:00",
+      "network_expected": 97,
+      "token": "0x90d12Fc13A445337285Ae94F4a83295058076E1d",
+      "transaction_hash": "0x23e6e6b38a4f1c4b22ee862e8f5c14d67722c900cbfc93e03cfbc4d373452753",
+      "state_query_mode": "latest; independent calls",
+      "checks": [
+        {
+          "check": "BSC testnet chain ID is 97",
+          "status": "PASS"
+        },
+        {
+          "check": "Treasury2 unfreeze transaction succeeded",
+          "status": "PASS"
+        },
+        {
+          "check": "Receipt hash matches",
+          "status": "PASS"
+        },
+        {
+          "check": "Receipt sender is Compliance",
+          "status": "PASS"
+        },
+        {
+          "check": "Receipt target is the token",
+          "status": "PASS"
+        },
+        {
+          "check": "Unfreeze is later than the verified treasury2 freeze",
+          "status": "PASS"
+        },
+        {
+          "check": "Calldata is unfreeze(treasury2)",
+          "status": "PASS"
+        },
+        {
+          "check": "Transaction sender matches",
+          "status": "PASS"
+        },
+        {
+          "check": "Transaction target matches",
+          "status": "PASS"
+        },
+        {
+          "check": "Transaction value is zero",
+          "status": "PASS"
+        },
+        {
+          "check": "Transaction and receipt block hashes match",
+          "status": "PASS"
+        },
+        {
+          "check": "AddressUnfrozen event matches treasury2 and Compliance",
+          "status": "PASS"
+        },
+        {
+          "check": "Treasury2 unfrozen; role remains active; balances and supply unchanged",
+          "status": "PASS"
+        },
+        {
+          "check": "Mint restored after treasury2 unfreeze: expected successful simulation",
+          "status": "PASS"
+        },
+        {
+          "check": "Transfer restored after treasury2 unfreeze: expected successful simulation",
+          "status": "PASS"
+        },
+        {
+          "check": "Admin can revoke temporary Treasury role: expected successful simulation",
+          "status": "PASS"
+        },
+        {
+          "check": "Independent simulations did not change state",
+          "status": "PASS"
+        }
+      ],
+      "receipt_block": 137773872,
+      "receipt_block_hash": "0xa7ffa04793f3bd11a916dc44e36ba04fc015f4161bfe181d925c2387fd0ddd99",
+      "before": {
+        "treasury_role": "true",
+        "treasury2_frozen": "false",
+        "walletB_frozen": "false",
+        "treasury2_balance": "500000000000000000000",
+        "walletB_balance": "2200000000000000000000",
+        "supply": "50000490000000000000000000"
+      },
+      "after": {
+        "treasury_role": "true",
+        "treasury2_frozen": "false",
+        "walletB_frozen": "false",
+        "treasury2_balance": "500000000000000000000",
+        "walletB_balance": "2200000000000000000000",
+        "supply": "50000490000000000000000000"
+      },
+      "status": "PASS",
+      "finished_utc": "2026-10-19T21:55:59.323215+00:00",
+      "target": "0x8B017A4068C4Af2346F5076770c06c4216cA11BF"
+    },
+    {
+      "id": "treasury_role_cleanup",
+      "started_utc": "2026-10-19T22:00:46.722130+00:00",
+      "network_expected": 97,
+      "token": "0x90d12Fc13A445337285Ae94F4a83295058076E1d",
+      "transaction_hash": "0x215f9314b3152c2c9666ebe7111f1abcdce63d99c6bbbd6c368724b35a821307",
+      "state_query_mode": "latest; independent calls, not one fixed block",
+      "checks": [
+        {
+          "check": "BSC testnet chain ID is 97",
+          "status": "PASS"
+        },
+        {
+          "check": "Treasury-role revocation succeeded",
+          "status": "PASS"
+        },
+        {
+          "check": "Receipt hash matches",
+          "status": "PASS"
+        },
+        {
+          "check": "Receipt sender is Admin",
+          "status": "PASS"
+        },
+        {
+          "check": "Receipt target is the token",
+          "status": "PASS"
+        },
+        {
+          "check": "Role revocation is later than the verified treasury2 unfreeze",
+          "status": "PASS"
+        },
+        {
+          "check": "Calldata revokes only Treasury role from treasury2",
+          "status": "PASS"
+        },
+        {
+          "check": "Transaction sender matches",
+          "status": "PASS"
+        },
+        {
+          "check": "Transaction target matches",
+          "status": "PASS"
+        },
+        {
+          "check": "Transaction value is zero",
+          "status": "PASS"
+        },
+        {
+          "check": "Transaction and receipt block hashes match",
+          "status": "PASS"
+        },
+        {
+          "check": "RoleRevoked event matches role, treasury2 and Admin",
+          "status": "PASS"
+        },
+        {
+          "check": "Final roles, balances, allowance, supply and freeze flags match expectations",
+          "status": "PASS"
+        },
+        {
+          "check": "Original Treasury still accepts simulated mint",
+          "status": "PASS"
+        },
+        {
+          "check": "Revoked treasury2 mint rejected specifically for missing Treasury role",
+          "status": "PASS"
+        },
+        {
+          "check": "Unfrozen treasury2 can still simulate ordinary transfer",
+          "status": "PASS"
+        },
+        {
+          "check": "All observed state unchanged after independent simulations",
+          "status": "PASS"
+        },
+        {
+          "check": "Tracked Treasury and wallet balances sum to total supply",
+          "status": "PASS"
+        }
+      ],
+      "receipt_block": 137774537,
+      "receipt_block_hash": "0x37288d97b1facdc3ac0caf83b1250261466a6cce074fa2971034716e57200bd6",
+      "before": {
+        "treasury2_treasury_role": "false",
+        "original_treasury_role": "true",
+        "admin_role": "true",
+        "supply": "50000490000000000000000000",
+        "allowance_A_spender": "400000000000000000000",
+        "treasury_balance": "49989000000000000000000000",
+        "walletA_balance": "8790000000000000000000",
+        "walletB_balance": "2200000000000000000000",
+        "treasury2_balance": "500000000000000000000",
+        "token_balance": "0",
+        "walletA_frozen": "false",
+        "walletB_frozen": "false",
+        "spender_frozen": "false",
+        "treasury2_frozen": "false"
+      },
+      "after": {
+        "treasury2_treasury_role": "false",
+        "original_treasury_role": "true",
+        "admin_role": "true",
+        "supply": "50000490000000000000000000",
+        "allowance_A_spender": "400000000000000000000",
+        "treasury_balance": "49989000000000000000000000",
+        "walletA_balance": "8790000000000000000000",
+        "walletB_balance": "2200000000000000000000",
+        "treasury2_balance": "500000000000000000000",
+        "token_balance": "0",
+        "walletA_frozen": "false",
+        "walletB_frozen": "false",
+        "spender_frozen": "false",
+        "treasury2_frozen": "false"
+      },
+      "status": "PASS",
+      "finished_utc": "2026-10-19T22:01:43.731469+00:00",
+      "target": "0x8B017A4068C4Af2346F5076770c06c4216cA11BF",
+      "treasury2_cleanup_complete": true
+    }
+  ],
+  "completion": {
+    "treasury2_cleanup_complete": true,
+    "final_record_id": "treasury_role_cleanup",
+    "recorded_check_entries": 102,
+    "note": "Check entries are assertions, not a count of independent tests."
+  }
+}

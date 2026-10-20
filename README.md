@@ -1,17 +1,42 @@
 # One Dust (1DUST) — Contract
 
-Foundry project for the One Dust token contract and its local tests. This
-repository is a work in progress, not an audit or a deployment record.
-No deployment is documented here.
+Foundry project containing the One Dust token contract, local tests,
+and documented BNB Smart Chain Testnet checks.
 
-## Requirements
+The token has been deployed on BNB Smart Chain Testnet and Mainnet.
+The checks documented in this evidence set cover local execution and
+Testnet; they do not establish validation of the Mainnet deployment.
 
-- Foundry with Solc 0.8.37 available.
-- Network access to install the dependencies below.
+The contract provides role-controlled minting to Treasury-role recipients,
+address freezing, ordinary burns, and privileged burning of frozen balances.
+Additional minting has no supply cap. Administrative powers and their
+operational controls must be considered separately from test results.
 
-## Setup
+## Scope
 
-Clone the repository, then run these commands from its root:
+Documented testnet contract:
+`0x90d12Fc13A445337285Ae94F4a83295058076E1d` (chain ID 97).
+
+See [the test log](docs/Test-Log.md) for dated checks and limitations.
+The latest recorded local regression completed on 2026-10-20:
+42 tests passed, 0 failed, 0 skipped.
+
+A subsequent targeted run passed three additional edge-case tests,
+with 0 failures and 0 skipped. These are separate executions, not one
+recorded full 45-test run. See the
+[edge-case report](docs/test-evidence/local/edge-cases.json).
+
+This repository does not establish mainnet Safe configuration or operational
+readiness. Test results are not an independent security audit or a security
+guarantee.
+
+## Requirements and setup
+
+- Foundry; the recorded regression used Forge 1.8.3.
+- Solc 0.8.37.
+- Network access for dependency installation and compiler download if needed.
+
+From the cloned repository root:
 
 ```sh
 forge install --no-git foundry-rs/forge-std@v1.17.0
@@ -20,26 +45,34 @@ forge build --force
 forge test -vv
 ```
 
-Do not run `forge init` in the cloned repository; the Foundry project files
-are already present. Dependencies are installed under `lib/`, which is ignored
-by Git. The commands above specify release tags, but a clean-checkout build
-and resolved dependency commit hashes have not yet been independently
-verified.
+Do not run `forge init`: the project files are already present.
+Dependencies are installed under `lib/`, which Git ignores.
+The installation commands select release tags; local package version labels
+alone do not prove that dependency contents are unmodified.
+
+The commands above run the project; they do not reproduce every override
+of the recorded control run. Its settings are documented in the test log.
 
 ## Project files
 
 - `src/OneDust.sol` — token contract.
 - `test/OneDust.t.sol` — unit and fuzz tests.
-- `test/OneDust.invariant.t.sol` — invariant and directed tests.
-- `foundry.toml` — compiler and build settings.
-- `docs/Test-Log.md` — dated local checks and their results.
-
-BNB Smart Chain is the intended network. Consult `foundry.toml` for the
-build configuration; successful local tests do not establish deployment
-readiness or security.
+- `test/OneDust.invariant.t.sol` — invariant campaigns and directed tests.
+- `test/OneDustEdgeCases.t.sol` — directed checks for zero-value approvals,
+  frozen-recipient allowance rollback, and post-burn freeze enforcement.
+- `test/OneDustTestnetDeployment.t.sol` — local constructor test using
+  the testnet role-holder addresses; it does not deploy to a live network.
+- `foundry.toml` — compiler and build configuration.
+- `docs/Test-Log.md` — dated checks, results, and limitations.
+- [Coverage matrix](docs/Test-Coverage.md) — properties, test references,
+  network evidence, and open items.
+- [Slither review](docs/Slither-Review.md) — disposition of the five
+  historical informational findings.
+- [Build evidence](docs/build-evidence/testnet/README.md) — saved compilation
+  and deployment-comparison materials for the documented testnet contract.
 
 ## Security
 
 Never commit recovery phrases, private keys, passwords, API keys, keystores,
 or `.env` files. Do not sign deployment or administrative transactions based
-on this README.
+solely on this README.

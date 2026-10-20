@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "record_type": "historical_transaction_verification",
+  "scope": "Recorded verification results; not a new network query, raw receipt, or independent audit.",
+  "verification": {
+    "started_utc": "2026-10-19T22:37:40.618972+00:00",
+    "token": "0x90d12Fc13A445337285Ae94F4a83295058076E1d",
+    "planned_transactions": 15,
+    "verified_transactions": [
+      {
+        "sequence": 1,
+        "label": "Treasury to walletA",
+        "transaction_hash": "0xdf0d40ac8d62e8a2c04eedc6b232c8f74f22e792d0fdcd948206d1c7bd8bbcdf",
+        "block": 134781709,
+        "caller": "0x031fC27d09bB5cAA0f8D6a81B2e94C51DBcd06D2",
+        "method": "transfer",
+        "token_event_count": 1,
+        "status": "PASS"
+      },
+      {
+        "sequence": 2,
+        "label": "Treasury to walletB",
+        "transaction_hash": "0x87511908c1363212e213a146ff5f3e162f2e8dc0e11d6999dda62fb79df3da34",
+        "block": 134781794,
+        "caller": "0x031fC27d09bB5cAA0f8D6a81B2e94C51DBcd06D2",
+        "method": "transfer",
+        "token_event_count": 1,
+        "status": "PASS"
+      },
+      {
+        "sequence": 3,
+        "label": "walletA to walletB",
+        "transaction_hash": "0x2794408c866fc55f85d2063203c78ecdfafebe8ac3c897a70907f94fa96f64a2",
+        "block": 134783744,
+        "caller": "0xba9535A692450F4927602C9a57106F28C760D3c9",
+        "method": "transfer",
+        "token_event_count": 1,
+        "status": "PASS"
+      },
+      {
+        "sequence": 4,
+        "label": "Approve spender",
+        "transaction_hash": "0x9d3d1bcd533334fe38bbaff42fbeeb46391affa337ad7eb7981cd3a58e42db3a",
+        "block": 134785117,
+        "caller": "0xba9535A692450F4927602C9a57106F28C760D3c9",
+        "method": "approve",
+        "token_event_count": 1,
+        "status": "PASS"
+      },
+      {
+        "sequence": 5,
+        "label": "Spender transferFrom",
+        "transaction_hash": "0x8e371b462acbc1fbf826e9d84787f8f8307e0957c602fda85e25a02316e6cf3f",
+        "block": 134786592,
+        "caller": "0xC289E5b5ee79EE247Bec0a5fB9ba916C91463819",
+        "method": "transferFrom",
+        "token_event_count": 1,
+        "status": "PASS"
+      },
+      {
+        "sequence": 6,
+        "label": "Ordinary walletA burn",
+        "transaction_hash": "0x4c944f92f6f2a19d746e437ca0dd35872a7d4ff1195b924f799bcba3b37908b1",
+        "block": 134787287,
+        "caller": "0xba9535A692450F4927602C9a57106F28C760D3c9",
+        "method": "burn",
+        "token_event_count": 1,
+        "status": "PASS"
+      },
+      {
+        "sequence": 7,
+        "label": "Mint to Treasury",
+        "transaction_hash": "0x9a77d627bc6e5609bf5b6548e4178fa7737972aea6f50fa950517cff5cc79224",
+        "block": 134788739,
+        "caller": "0x8F2325D4E7c520FDF93470b73fccdEED1e5FAdc4",
+        "method": "mint",
+        "token_event_count": 1,
+        "status": "PASS"
+      },
+      {
+        "sequence": 8,
+        "label": "Grant Treasury role to treasury2",
+        "transaction_hash": "0x52352081f990062c4b200f27be651b6155b31c6c3a570c6749fe0d2142cfee12",
+        "block": 134790855,
+        "caller": "0xA42dB27670Fceb0F236aa5450396Adcc9B5BFB01",
+        "method": "grantRole",
+        "token_event_count": 1,
+        "status": "PASS"
+      },
+      {
+        "sequence": 9,
+        "label": "Mint to treasury2",
+        "transaction_hash": "0xb0c19ea989d752730850732711e1afc0a6f8dbb20d31cc5573694fc79e9f8eb4",
+        "block": 134791609,
+        "caller": "0x8F2325D4E7c520FDF93470b73fccdEED1e5FAdc4",
+        "method": "mint",
+        "token_event_count": 1,
+        "status": "PASS"
+      },
+      {
+        "sequence": 10,
+        "label": "Revoke treasury2 role",
+        "transaction_hash": "0xa706e38d8ff3ad4d7c81bb05987714f3e83bfe60f58d625d14424e3c49e2104f",
+        "block": 134792173,
+        "caller": "0xA42dB27670Fceb0F236aa5450396Adcc9B5BFB01",
+        "method": "revokeRole",
+        "token_event_count": 1,
+        "status": "PASS"
+      },
+      {
+        "sequence": 11,
+        "label": "Freeze walletA",
+        "transaction_hash": "0xa443ab204e94628987fc1cfd68a58a74f2650944720a5db16becd44f2145f187",
+        "block": 134793245,
+        "caller": "0xb3323caAD76A0745FE6a260753fd608d89655C83",
+        "method": "freeze",
+        "token_event_count": 1,
+        "status": "PASS"
+      },
+      {
+        "sequence": 12,
+        "label": "Burn frozen walletA funds",
+        "transaction_hash": "0x0788bf85490e0b29b19fb3ca8e3370afa12a537f7f38eb6d7d8f22e091a01d2a",
+        "block": 134795222,
+        "caller": "0x9823e7401126BF5eBcC21Bbb6174a74365ab9CED",
+        "method": "burnFrozen",
+        "token_event_count": 2,
+        "status": "PASS"
+      },
+      {
+        "sequence": 13,
+        "label": "Unfreeze walletA",
+        "transaction_hash": "0x300d27004e3e17c4745436924b4a0df9fa27f695fe892393ed80078981316f33",
+        "block": 134795736,
+        "caller": "0xb3323caAD76A0745FE6a260753fd608d89655C83",
+        "method": "unfreeze",
+        "token_event_count": 1,
+        "status": "PASS"
+      },
+      {
+        "sequence": 14,
+        "label": "Freeze spender",
+        "transaction_hash": "0xa237eac87c16fba2d5edbb107545d79e0f74b465a4e0fc88eebd1dfad6874006",
+        "block": 134798102,
+        "caller": "0xb3323caAD76A0745FE6a260753fd608d89655C83",
+        "method": "freeze",
+        "token_event_count": 1,
+        "status": "PASS"
+      },
+      {
+        "sequence": 15,
+        "label": "Unfreeze spender",
+        "transaction_hash": "0x8cf56311b2c386d37ac5741c20a9926efa5c000df3e908141545301f21adc778",
+        "block": 134799124,
+        "caller": "0xb3323caAD76A0745FE6a260753fd608d89655C83",
+        "method": "unfreeze",
+        "token_event_count": 1,
+        "status": "PASS"
+      }
+    ],
+    "note": "Accounting is reconstructed from verified events, not historical state reads.",
+    "reconstructed_balances_base_units": {
+      "0x031fc27d09bb5caa0f8d6a81b2e94c51dbcd06d2": "49989000000000000000000000",
+      "0xba9535a692450f4927602c9a57106f28c760d3c9": "8790000000000000000000",
+      "0x8ac4bd29bc14e0ce9fed164d262f166e9d9bb1c1": "2200000000000000000000",
+      "0x8b017a4068c4af2346f5076770c06c4216ca11bf": "500000000000000000000"
+    },
+    "reconstructed_supply_base_units": "50000490000000000000000000",
+    "status": "PASS",
+    "finished_utc": "2026-10-19T22:38:03.351627+00:00"
+  }
+}

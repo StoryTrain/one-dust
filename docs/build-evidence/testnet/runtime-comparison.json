@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "record_type": "runtime_comparison",
+  "scope": "Recorded verification results; not a new network query, raw receipt, or independent audit.",
+  "verification": {
+    "started_utc": "2026-10-19T22:29:39.431089+00:00",
+    "network_expected": 97,
+    "token": "0x90d12Fc13A445337285Ae94F4a83295058076E1d",
+    "fresh_compilation_performed": false,
+    "checks": [
+      {
+        "check": "Remix report matches the inventoried file",
+        "status": "PASS"
+      },
+      {
+        "check": "Remix metadata records the expected compiler version",
+        "status": "PASS"
+      },
+      {
+        "check": "Standard JSON matches Remix compilerInput",
+        "status": "PASS"
+      },
+      {
+        "check": "Compiler input contains 11 sources",
+        "status": "PASS"
+      },
+      {
+        "check": "All compiler input sources have inline content",
+        "status": "PASS"
+      },
+      {
+        "check": "Git source matches the recorded source hash",
+        "status": "PASS"
+      },
+      {
+        "check": "Working source equals Git HEAD byte-for-byte",
+        "status": "PASS"
+      },
+      {
+        "check": "Remix OneDust source equals Git source after newline normalization only",
+        "status": "PASS"
+      },
+      {
+        "check": "Runtime has no immutable-reference substitutions",
+        "status": "PASS"
+      },
+      {
+        "check": "Runtime has no unresolved library-link references",
+        "status": "PASS"
+      },
+      {
+        "check": "Remix runtime length is 10071 bytes",
+        "status": "PASS"
+      },
+      {
+        "check": "Previously saved on-chain runtime equals full Remix runtime",
+        "status": "PASS"
+      },
+      {
+        "check": "BSC testnet chain ID is 97",
+        "status": "PASS"
+      },
+      {
+        "check": "Current full testnet runtime equals Remix runtime byte-for-byte",
+        "status": "PASS"
+      }
+    ],
+    "remix_report_sha256": "390992a945eb672d547cad74d374aa1976992d4de3e5c864dbb68e97a3591b6e",
+    "compiler": {
+      "version": "0.8.37+commit.f401782d"
+    },
+    "compiler_input_settings": {
+      "optimizer": {
+        "enabled": false,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "metadata",
+            "devdoc",
+            "userdoc",
+            "storageLayout",
+            "evm.legacyAssembly",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers",
+            "evm.gasEstimates",
+            "evm.assembly"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "metadata_settings": {
+      "compilationTarget": {
+        "OneDust.sol": "OneDust"
+      },
+      "evmVersion": "osaka",
+      "libraries": {},
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "optimizer": {
+        "enabled": false,
+        "runs": 200
+      },
+      "remappings": []
+    },
+    "standard_input_sha256": "b36bf235241a0e761a40f3f70e9968bcc8fec1d31c8ae1a5a1b8b997192baf78",
+    "git_source_sha256": "6c0d64c392d93fde32c23ad4e990149b822b544224cdecbb9bbdc1aa0ad063ff",
+    "working_source_sha256": "6c0d64c392d93fde32c23ad4e990149b822b544224cdecbb9bbdc1aa0ad063ff",
+    "embedded_source_sha256": "2cac85546a1b49ccf0c0e654f7a9120ebb60490493b58d87f120a23ea56e827f",
+    "runtime_bytes": 10071,
+    "remix_runtime_bytes_sha256": "5450d9d0d05826f2cc70ec600d058084aeb6740286dadd21fbe902d77f171252",
+    "saved_runtime_bytes_sha256": "5450d9d0d05826f2cc70ec600d058084aeb6740286dadd21fbe902d77f171252",
+    "current_runtime_bytes_sha256": "5450d9d0d05826f2cc70ec600d058084aeb6740286dadd21fbe902d77f171252",
+    "status": "PASS",
+    "finished_utc": "2026-10-19T22:29:41.085002+00:00"
+  }
+}

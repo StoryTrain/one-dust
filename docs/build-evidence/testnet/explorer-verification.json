@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "record_type": "explorer_verification_observation",
+  "status": "RECORDED",
+  "network": {
+    "name": "BNB Smart Chain Testnet",
+    "chain_id": 97,
+    "contract": "0x90d12Fc13A445337285Ae94F4a83295058076E1d"
+  },
+  "source": {
+    "type": "operator_supplied_page_transcription",
+    "page_url": "https://testnet.bscscan.com/address/0x90d12Fc13A445337285Ae94F4a83295058076E1d#code",
+    "operator_reported_local_date": "2026-10-20",
+    "observation_time_utc": null,
+    "recorded_utc": "2026-10-20T15:24:38.227474+00:00",
+    "screenshot_included": false,
+    "independent_api_response_included": false
+  },
+  "reported_fields": {
+    "source_code_status": "Source Code Verified",
+    "match_type": "Exact Match",
+    "contract_name": "OneDust",
+    "compiler_version": "v0.8.37+commit.f401782d",
+    "optimization_enabled_display": "No with 200 runs",
+    "other_settings_display": "default evmVersion",
+    "license_display": "MIT",
+    "contract_creator": "0xe64619eEadce3eC495991a5f7FCC57Cfb82B47Cc",
+    "deployment_transaction": "0x276f6766b3cfee5dc4482cc2dddee3a8756f87d536a0b44606a60296fb0a5ab6"
+  },
+  "consistency_with_retained_evidence": {
+    "contract_address": true,
+    "creator_and_deployment_transaction": true,
+    "compiler_version": true,
+    "optimizer_enabled_false_and_runs_200": true,
+    "input_omits_explicit_evm_version": true,
+    "effective_evm_version_in_saved_metadata": "osaka"
+  },
+  "scope": [
+    "Records the explorer status reported by the operator.",
+    "Not an independently downloaded explorer API response or source export.",
+    "Record creation time is not an exact browser-observation timestamp.",
+    "Relative age text was not used as the deployment timestamp.",
+    "Separate bytecode reproduction is documented in compiler-reproduction.json."
+  ]
+}

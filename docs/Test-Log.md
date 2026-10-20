@@ -1,8 +1,12 @@
 # 1DUST — Test Log
 
-Local development checks for `src/OneDust.sol`. Entries record observations at the
-stated UTC time, not the current state of the repository. PASS applies only to the
-check described in that row. No on-chain deployment or security audit is recorded here.
+Local development and BSC Testnet checks for `src/OneDust.sol`.
+Entries record observations at the stated UTC time, not current chain state.
+PASS applies only to the stated check. This log is not an independent
+security audit and does not establish mainnet Safe operational readiness.
+
+The Development environment table below describes the historical local runs.
+Later runs identify their own tools and settings where recorded.
 
 ## Development environment
 
@@ -35,3 +39,40 @@ check described in that row. No on-chain deployment or security audit is recorde
 | 13 | 2026-10-02T03:36:25Z–03:36:29Z | Compiler and Slither status | Local | Check `forge config --json` and build-info; rerun Slither with `--fail-none --json` to a new temporary file | Confirm actual compiler and test exit-code behavior without dropping findings. | Compiler check at `2026-10-02T03:34:57Z`: configured/build-info Solc `0.8.37`, optimizer off, via-IR off. Rerun: 13 contracts, 102 detectors, JSON `success: true`, same five findings; exit `0` with `--fail-none`. Findings remain open for disposition. | PASS — status check only |
 | 14 | 2026-10-02T03:39:17Z–03:40:24Z | Full regression | Local | `forge test --force -vv` | Run all test suites together after Slither's clean/build cycles. | Solc `0.8.37`; 32 files compiled. Unit suite: 31 passed, including fuzz test (256 runs). Two invariant suites: 5 passed each; each campaign 256 runs, 128,000 handler calls, 0 reported reverts. Total: 41 passed, 0 failed, 0 skipped; exit `0`. Seed not reported. | PASS |
 | 15 | 2026-10-02T04:35:33Z–04:37:07Z | Fresh staged-tree setup | Local + dependency downloads | Archive staged tree `fa47c6dce3d579bc518e174662444bec7aa38e3c`; `forge install --no-git foundry-rs/forge-std@v1.17.0`; `forge install --no-git OpenZeppelin/openzeppelin-contracts@v5.6.1`; `forge build --force`; `forge test -vv` | Install the documented dependencies in a separate directory, compile and run all tests. | Archive/tar exits `0/0`. Both tagged dependencies installed. Solc `0.8.37`: 32 files compiled; build successful. Three suites: 41 passed, 0 failed, 0 skipped; test exit `0`. Each invariant campaign: 256 runs, 128,000 calls, 0 reported reverts. Seed not reported. The staged tree predates this log entry; no GitHub clone was tested. | PASS |
+
+| 16 | 2026-10-19T15:36:22Z | Post-drill state snapshot | BSC Testnet / 97 | Read state at block 137725881. | State agrees with the recorded drill. | Supply 50,000,490 1DUST; Treasury 49,989,000; walletA 8,790; walletB 2,200; treasury2 500. Allowance walletA to spender 400. Checked actor freeze flags cleared; temporary treasury2 role absent. | PASS — recorded snapshot |
+| 17 | 2026-10-19T15:50:55Z–15:52:03Z | Restoration and access control | BSC Testnet / 97 | Run 23 independent eth_call checks. | Allowed operations succeed; forbidden operations revert as expected. | All 23 checks matched expectations, including role checks and authorized/unauthorized operation simulations. No transaction sent. | PASS — simulations |
+| 18 | 2026-10-19T21:02:36Z–21:08:56Z | Frozen spender and restoration | BSC Testnet / 97 | Verify freeze/unfreeze receipts and simulate affected operations. | Frozen spender cannot spend allowance; unfreeze restores operations. | Receipt, caller, calldata and events matched. Frozen transferFrom, burnFrom and approval were rejected; restored simulations succeeded. Checked balances, supply and allowance unchanged by simulations. | PASS |
+| 19 | 2026-10-19T21:35:57Z–22:01:43Z | Treasury role, freeze and cleanup | BSC Testnet / 97 | Verify temporary role grant, freeze, unfreeze and role revocation; simulate mint and burn conditions. | Mint requires an active, unfrozen Treasury recipient; failed oversized burn preserves state. | Mint to frozen treasury2 reverted. Burning 501 with balance 500 returned the expected insufficient-balance error. After unfreeze operations were restored; final role revocation blocked mint. No real mint or burn occurred during this supplementary cycle. | PASS |
+| 20 | 2026-10-19T22:29:39Z–22:33:14Z | Saved artifacts and deployment verification | Local + BSC Testnet / 97 | Compare saved Remix/Standard JSON artifacts with source, runtime and original deployment. | Saved artifacts correspond to the checked contract and deployment. | Source comparisons matched, with newline normalization for embedded Remix source. Saved/current full runtime matched Remix: 10,071 bytes. Deployment input, constructor arguments and six initial events matched. No fresh compilation was performed in this check. | PASS — artifact/deployment comparison |
+| 21 | 2026-10-19T22:37:40Z–22:38:03Z | Original functional transactions | BSC Testnet / 97 | Verify 15 original calls by receipts, calldata and events. | Calls and event accounting match the recorded drill. | 15/15 verified. Event accounting reproduced supply 50,000,490 and the recorded final balances. Original transactions occurred on 2026-10-04; this check reconstructed events, not historical state reads. | PASS |
+| 22 | 2026-10-20T09:45:14Z–09:48:22Z | Full local regression | Local / offline | Fresh build and all test suites using verified local Solc, seed 0x1 and one worker. | Compile and pass the current test set. | Forge 1.8.3; Solc 0.8.37; 33 files compiled. Four suites: 42 passed, 0 failed, 0 skipped; exit 0. Each invariant campaign: 256 runs, depth 500, 128,000 handler calls, 0 reported reverts. Protected project files unchanged. | PASS |
+| 23 | 2026-10-20T15:09:29Z–2026-10-20T15:09:29Z | Fresh compiler reproduction | Local | Compile the unchanged saved Standard JSON with verified local Solc 0.8.37. | Reproduce complete saved creation bytecode, runtime and deployment input. | All three byte comparisons matched, including metadata: creation 14627 bytes; runtime 10071 bytes; creation plus arguments 14787 bytes. Compiler diagnostic entries: 0. No network query or deployment. [Report](build-evidence/testnet/compiler-reproduction.json). | PASS |
+| 24 | 2026-10-20T15:24:38Z | Explorer verification observation | BSC Testnet / 97 | Record the operator-supplied BscScan page transcription and compare displayed fields with retained evidence. | Establish the reported explorer verification status. | Source Code Verified, Exact Match; OneDust; compiler v0.8.37+commit.f401782d; optimization No with 200 runs; default evmVersion; creator and creation transaction match. Timestamp is record creation time; exact browser-observation UTC was not captured. [Record](build-evidence/testnet/explorer-verification.json). | RECORDED — operator observation |
+| 25 | 2026-10-20T15:33:34Z–2026-10-20T15:33:40Z | Directed edge-case tests | Local / offline | Run only test/OneDustEdgeCases.t.sol with verified local Solc 0.8.37. | Check zero-value approval restrictions, frozen-recipient allowance rollback and freeze enforcement after successful privileged burn. | 3 passed, 0 failed, 0 skipped; exit 0. Previous source, test and configuration hashes unchanged. Separate from the full 42-test regression; [report](test-evidence/local/edge-cases.json). | PASS |
+
+## Scope and limitations
+
+- Testnet contract: `0x90d12Fc13A445337285Ae94F4a83295058076E1d`;
+  chain ID 97. These entries do not verify the mainnet deployment.
+- Apart from the stated fixed-block snapshot, later state checks and
+  independent eth_call simulations generally used latest state. They do not
+  form one atomic snapshot, and simulated changes were not persisted.
+- Testnet role holders in these checks were EOAs. These results do not verify
+  mainnet Safe owners, thresholds, modules, guards or nested Safe execution.
+- Row 22 used optimizer=false, optimizer_runs=200, via_ir=false and
+  evm_version=osaka. Fuzz runs=256; invariant fail_on_revert=false;
+  call_override=false; threads=1; invariant_workers=1.
+  Handler-call counts include early returns without a token operation.
+- Local package metadata reports OpenZeppelin 5.6.1 and forge-std 1.17.0.
+  This cleanup did not independently verify all dependency files against
+  official releases. The local regression is not a deployed-bytecode
+  reproduction or proof of target-network EVM compatibility.
+- Historical Slither findings in rows 12-13 are reviewed for the pinned
+  compiler and saved input in [Slither-Review.md](Slither-Review.md).
+  The five historical findings remain recorded. Later test results do not
+  replace the historical 41-test results.
+- Saved-artifact comparisons are separate from fresh compiler reproduction
+  and explorer verified-source status.
+- The documented testnet set is not a claim that no other transactions exist.
+- These results are not a security guarantee or approval to launch liquidity.

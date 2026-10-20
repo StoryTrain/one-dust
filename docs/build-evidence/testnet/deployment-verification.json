@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "record_type": "deployment_verification",
+  "scope": "Recorded verification results; not a new network query, raw receipt, or independent audit.",
+  "verification": {
+    "started_utc": "2026-10-19T22:33:12.070178+00:00",
+    "network_expected": 97,
+    "token": "0x90d12Fc13A445337285Ae94F4a83295058076E1d",
+    "transaction_hash": "0x276f6766b3cfee5dc4482cc2dddee3a8756f87d536a0b44606a60296fb0a5ab6",
+    "expected_constructor_arguments": {
+      "safe0Admin": "0xA42dB27670Fceb0F236aa5450396Adcc9B5BFB01",
+      "safe1Minter": "0x8F2325D4E7c520FDF93470b73fccdEED1e5FAdc4",
+      "safe2Compliance": "0xb3323caAD76A0745FE6a260753fd608d89655C83",
+      "safe3Burner": "0x9823e7401126BF5eBcC21Bbb6174a74365ab9CED",
+      "safe4Treasury": "0x031fC27d09bB5cAA0f8D6a81B2e94C51DBcd06D2"
+    },
+    "checks": [
+      {
+        "check": "Remix report matches the previously checked artifact",
+        "status": "PASS"
+      },
+      {
+        "check": "Creation bytecode has no unresolved library-link references",
+        "status": "PASS"
+      },
+      {
+        "check": "Remix creation bytecode is 14627 bytes",
+        "status": "PASS"
+      },
+      {
+        "check": "ABI contains one constructor",
+        "status": "PASS"
+      },
+      {
+        "check": "Constructor ABI has five address arguments in the expected order",
+        "status": "PASS"
+      },
+      {
+        "check": "Saved constructor arguments are 160 bytes",
+        "status": "PASS"
+      },
+      {
+        "check": "Saved constructor addresses and padding match",
+        "status": "PASS"
+      },
+      {
+        "check": "Five role holders are distinct and separate from deployer",
+        "status": "PASS"
+      },
+      {
+        "check": "BSC testnet chain ID is 97",
+        "status": "PASS"
+      },
+      {
+        "check": "Original deployment succeeded",
+        "status": "PASS"
+      },
+      {
+        "check": "Receipt hash matches",
+        "status": "PASS"
+      },
+      {
+        "check": "Receipt deployer matches",
+        "status": "PASS"
+      },
+      {
+        "check": "Receipt created the expected token address",
+        "status": "PASS"
+      },
+      {
+        "check": "Transaction deployer matches",
+        "status": "PASS"
+      },
+      {
+        "check": "Transaction is contract creation, not a call to another contract",
+        "status": "PASS"
+      },
+      {
+        "check": "Deployment value is zero",
+        "status": "PASS"
+      },
+      {
+        "check": "Transaction and receipt block hashes match",
+        "status": "PASS"
+      },
+      {
+        "check": "Deployment block matches historical record",
+        "status": "PASS"
+      },
+      {
+        "check": "Full on-chain deployment input equals Remix creation plus five arguments",
+        "status": "PASS"
+      },
+      {
+        "check": "Saved Rabby DATA equals the actual on-chain deployment input",
+        "status": "PASS"
+      },
+      {
+        "check": "Deployment emitted exactly five RoleGranted events",
+        "status": "PASS"
+      },
+      {
+        "check": "Initial role event matches safe0Admin",
+        "status": "PASS"
+      },
+      {
+        "check": "Initial role event matches safe1Minter",
+        "status": "PASS"
+      },
+      {
+        "check": "Initial role event matches safe2Compliance",
+        "status": "PASS"
+      },
+      {
+        "check": "Initial role event matches safe3Burner",
+        "status": "PASS"
+      },
+      {
+        "check": "Initial role event matches safe4Treasury",
+        "status": "PASS"
+      },
+      {
+        "check": "Deployment emitted one initial Transfer",
+        "status": "PASS"
+      },
+      {
+        "check": "Initial mint Transfer is from zero address only to original Treasury",
+        "status": "PASS"
+      },
+      {
+        "check": "Initial mint event amount is exactly 50000000 1DUST",
+        "status": "PASS"
+      }
+    ],
+    "receipt_block": 134768448,
+    "receipt_block_hash": "0xf21ee39a81bb08d93f7bb4ffd7732e4d017e905ff0e886f4c38466f4e79193fc",
+    "deployment_input_bytes": 14787,
+    "deployment_input_sha256": "426aba105d66c917f8d0089c7b2a171e576767b225405f4fb2028fc526948bcf",
+    "status": "PASS",
+    "finished_utc": "2026-10-19T22:33:14.440315+00:00"
+  }
+}

@@ -1,0 +1,5 @@
+# Preserve original evidence bytes; do not normalize line endings.
+OneDust_Remix_compData_2026-10-04.json -text
+OneDust_constructor_args.hex -text
+OneDust_onchain_runtime.hex -text
+OneDust_verify_standard_input.json -text

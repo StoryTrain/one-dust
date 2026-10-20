@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "record_type": "compiler_reproduction",
+  "status": "PASS",
+  "started_utc": "2026-10-20T15:09:29.448070+00:00",
+  "finished_utc": "2026-10-20T15:09:29.882999+00:00",
+  "compiler_version": "solc, the solidity compiler commandline interface\r\nVersion: 0.8.37+commit.f401782d.Windows.msvc",
+  "compiler_binary_sha256": "967743b2d12155f59a0ddf9410afe25c7deaa73f4fe3d33c4dc0739f627d9ec9",
+  "invocation": "solc --standard-json < OneDust_verify_standard_input.json",
+  "input": {
+    "filename": "OneDust_verify_standard_input.json",
+    "sha256": "b36bf235241a0e761a40f3f70e9968bcc8fec1d31c8ae1a5a1b8b997192baf78",
+    "inline_source_count": 11,
+    "modified_before_compilation": false
+  },
+  "target": {
+    "source": "OneDust.sol",
+    "contract": "OneDust"
+  },
+  "fresh_metadata_settings": {
+    "compilationTarget": {
+      "OneDust.sol": "OneDust"
+    },
+    "evmVersion": "osaka",
+    "libraries": {},
+    "metadata": {
+      "bytecodeHash": "ipfs"
+    },
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "remappings": []
+  },
+  "comparisons": [
+    {
+      "comparison": "creation_bytecode",
+      "matches": true,
+      "fresh_bytes": 14627,
+      "expected_bytes": 14627,
+      "fresh_sha256": "0dd3f6aad16a7394cbbdbb5d2344aa1a5fc492536650f366cbf04af9adff3880",
+      "expected_sha256": "0dd3f6aad16a7394cbbdbb5d2344aa1a5fc492536650f366cbf04af9adff3880"
+    },
+    {
+      "comparison": "runtime_bytecode",
+      "matches": true,
+      "fresh_bytes": 10071,
+      "expected_bytes": 10071,
+      "fresh_sha256": "5450d9d0d05826f2cc70ec600d058084aeb6740286dadd21fbe902d77f171252",
+      "expected_sha256": "5450d9d0d05826f2cc70ec600d058084aeb6740286dadd21fbe902d77f171252"
+    },
+    {
+      "comparison": "deployment_input",
+      "matches": true,
+      "fresh_bytes": 14787,
+      "expected_bytes": 14787,
+      "fresh_sha256": "426aba105d66c917f8d0089c7b2a171e576767b225405f4fb2028fc526948bcf",
+      "expected_sha256": "426aba105d66c917f8d0089c7b2a171e576767b225405f4fb2028fc526948bcf"
+    }
+  ],
+  "compiler_diagnostics": [],
+  "compiler_stderr": "",
+  "reference_deployment": {
+    "chain_id": 97,
+    "contract": "0x90d12fc13a445337285ae94f4a83295058076e1d",
+    "transaction_hash": "0x276f6766b3cfee5dc4482cc2dddee3a8756f87d536a0b44606a60296fb0a5ab6",
+    "transaction_file": "deployment-transaction.json"
+  },
+  "scope": [
+    "Fresh compilation of the unchanged saved Standard JSON input.",
+    "Full byte comparison, including metadata; no stripping or patching.",
+    "Compared with retained artifacts and the saved deployment transaction.",
+    "No new network-state query, deployment, or functional test execution."
+  ]
+}

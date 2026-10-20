@@ -1,0 +1,128 @@
+Compiling 33 files with Solc 0.8.37
+Solc 0.8.37 finished in 7.37s
+Compiler run successful!
+
+Ran 5 tests for test/OneDust.invariant.t.sol:OneDustInvariantTest
+[PASS]
+OneDustInvariantTest invariants:
+[PASS] invariant_RolesStaySeparated
+[PASS] invariant_SupplyMatchesAllTrackedBalances
+[PASS] invariant_SupplyMatchesGhostAccounting
+ OneDustInvariantTest invariants (runs: 256, calls: 128000, reverts: 0)
+
+╭----------------+--------------------------+-------+---------+----------╮
+| Contract       | Selector                 | Calls | Reverts | Discards |
++========================================================================+
+| OneDustHandler | approveSpender           | 7972  | 0       | 0        |
+|----------------+--------------------------+-------+---------+----------|
+| OneDustHandler | burnFromTokens           | 8084  | 0       | 0        |
+|----------------+--------------------------+-------+---------+----------|
+| OneDustHandler | burnFrozenTokens         | 7944  | 0       | 0        |
+|----------------+--------------------------+-------+---------+----------|
+| OneDustHandler | burnTokens               | 8030  | 0       | 0        |
+|----------------+--------------------------+-------+---------+----------|
+| OneDustHandler | freezeActor              | 8117  | 0       | 0        |
+|----------------+--------------------------+-------+---------+----------|
+| OneDustHandler | mint                     | 7922  | 0       | 0        |
+|----------------+--------------------------+-------+---------+----------|
+| OneDustHandler | transferFromTokens       | 7919  | 0       | 0        |
+|----------------+--------------------------+-------+---------+----------|
+| OneDustHandler | transferTokens           | 7902  | 0       | 0        |
+|----------------+--------------------------+-------+---------+----------|
+| OneDustHandler | tryBurnUnfrozen          | 7967  | 0       | 0        |
+|----------------+--------------------------+-------+---------+----------|
+| OneDustHandler | tryFrozenOwnerApprove    | 8025  | 0       | 0        |
+|----------------+--------------------------+-------+---------+----------|
+| OneDustHandler | tryFrozenRecipient       | 8043  | 0       | 0        |
+|----------------+--------------------------+-------+---------+----------|
+| OneDustHandler | tryFrozenSpenderBurn     | 7978  | 0       | 0        |
+|----------------+--------------------------+-------+---------+----------|
+| OneDustHandler | tryFrozenSpenderTransfer | 7927  | 0       | 0        |
+|----------------+--------------------------+-------+---------+----------|
+| OneDustHandler | tryFrozenTransfer        | 8167  | 0       | 0        |
+|----------------+--------------------------+-------+---------+----------|
+| OneDustHandler | tryNonTreasuryMint       | 8026  | 0       | 0        |
+|----------------+--------------------------+-------+---------+----------|
+| OneDustHandler | unfreezeActor            | 7977  | 0       | 0        |
+╰----------------+--------------------------+-------+---------+----------╯
+
+[PASS] test_FrozenOwnerApproveHandlerPath() (gas: 295031)
+[PASS] test_FrozenRecipientHandlerPath() (gas: 198992)
+[PASS] test_FrozenSpenderCannotBurnExistingAllowance() (gas: 264088)
+[PASS] test_FrozenSpenderCannotTransferExistingAllowance() (gas: 282259)
+Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 83.13s (83.10s CPU time)
+
+Ran 5 tests for test/OneDust.invariant.t.sol:OneDustRolesInvariantTest
+[PASS]
+OneDustRolesInvariantTest invariants:
+[PASS] invariant_AdminAndOutsiderCannotChangeByTheseActions
+[PASS] invariant_SupplyTracksRoleDependentOperations
+ OneDustRolesInvariantTest invariants (runs: 256, calls: 128000, reverts: 0)
+
+╭--------------------+-------------------+-------+---------+----------╮
+| Contract           | Selector          | Calls | Reverts | Discards |
++=====================================================================+
+| OneDustRoleHandler | burnCandidate     | 14227 | 0       | 0        |
+|--------------------+-------------------+-------+---------+----------|
+| OneDustRoleHandler | freezeCandidate   | 14167 | 0       | 0        |
+|--------------------+-------------------+-------+---------+----------|
+| OneDustRoleHandler | grantCandidate    | 14429 | 0       | 0        |
+|--------------------+-------------------+-------+---------+----------|
+| OneDustRoleHandler | grantOriginal     | 14135 | 0       | 0        |
+|--------------------+-------------------+-------+---------+----------|
+| OneDustRoleHandler | mintTo            | 14251 | 0       | 0        |
+|--------------------+-------------------+-------+---------+----------|
+| OneDustRoleHandler | outsiderGrant     | 14175 | 0       | 0        |
+|--------------------+-------------------+-------+---------+----------|
+| OneDustRoleHandler | revokeCandidate   | 14109 | 0       | 0        |
+|--------------------+-------------------+-------+---------+----------|
+| OneDustRoleHandler | revokeOriginal    | 14306 | 0       | 0        |
+|--------------------+-------------------+-------+---------+----------|
+| OneDustRoleHandler | unfreezeCandidate | 14201 | 0       | 0        |
+╰--------------------+-------------------+-------+---------+----------╯
+
+[PASS] test_AdminHandoverBeforeRevocationPreservesControl() (gas: 259250)
+[PASS] test_RevokingSoleAdminMakesRoleManagementUnrecoverable() (gas: 201478)
+[PASS] test_RoleHandlerCountersReachExpectedPaths() (gas: 1073451)
+[PASS] test_SoleAdminCanRenounceRole() (gas: 104234)
+Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 92.36s (92.36s CPU time)
+
+Ran 31 tests for test/OneDust.t.sol:OneDustTest
+[PASS] testFuzz_BurnFrozenPreservesBalanceAndSupply(uint256) (runs: 256, μ: 201113, ~: 200532)
+[PASS] test_AdminCanAcquireRolesAndRevokeBurner() (gas: 399742)
+[PASS] test_AdminControlsEachOperationalRoleAndEvents() (gas: 1704713)
+[PASS] test_BurnFrozenAuthorizationAndBounds() (gas: 523094)
+[PASS] test_BurnFrozenEvent() (gas: 176937)
+[PASS] test_BurnFrozenRequiresBurnerAndEmitsBothEvents() (gas: 236207)
+[PASS] test_ComplianceAuthorizationAndTransitions() (gas: 286818)
+[PASS] test_ConstructorEventsAndDeployerSeparation() (gas: 98315)
+[PASS] test_ConstructorRejectsZeroSafe0() (gas: 5444)
+[PASS] test_ConstructorRejectsZeroSafe1() (gas: 5489)
+[PASS] test_ConstructorRejectsZeroSafe2() (gas: 5465)
+[PASS] test_ConstructorRejectsZeroSafe3() (gas: 5378)
+[PASS] test_ConstructorRejectsZeroSafe4() (gas: 5446)
+[PASS] test_FreezeAndUnfreezeEvents() (gas: 89731)
+[PASS] test_FrozenHolderRecipientAndUnfreeze() (gas: 521079)
+[PASS] test_FrozenOwnerAndSpenderCannotApprove() (gas: 260769)
+[PASS] test_FrozenOwnerCannotBurnFromAndUnfreezeRestoresActions() (gas: 439771)
+[PASS] test_FrozenSpenderCannotSpendFiniteAllowance() (gas: 344483)
+[PASS] test_FrozenSpenderCannotSpendInfiniteAllowance() (gas: 264461)
+[PASS] test_FrozenTreasuryCannotReceiveMint() (gas: 110073)
+[PASS] test_FrozenTreasuryRoleRecipientCannotMint() (gas: 171358)
+[PASS] test_InitialStateAndRoles() (gas: 428185)
+[PASS] test_MintAuthorizationAndTreasuryLifecycle() (gas: 354420)
+[PASS] test_MintEventsZeroRecipientAndFrozenSecondTreasury() (gas: 297310)
+[PASS] test_NonAdminCannotManageRoles() (gas: 96795)
+[PASS] test_OnlyComplianceCanFreezeAndUnfreeze() (gas: 270092)
+[PASS] test_OrdinaryBurnAndBurnFrom() (gas: 259357)
+[PASS] test_RevokedComplianceCannotFreezeOrUnfreeze() (gas: 160414)
+[PASS] test_RevokedMinterCannotMint() (gas: 84166)
+[PASS] test_RevokingSoleAdminPreventsRecovery() (gas: 139630)
+[PASS] test_TransferAndAllowanceFailuresDoNotChangeState() (gas: 421452)
+Suite result: ok. 31 passed; 0 failed; 0 skipped; finished in 89.94ms (88.05ms CPU time)
+
+Ran 1 test for test/OneDustTestnetDeployment.t.sol:OneDustTestnetDeploymentTest
+[PASS] testConstructorWithTestnetEOAs() (gas: 92906)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 3.72ms (3.45ms CPU time)
+
+Ran 4 test suites in 175.62s (175.58s CPU time): 42 tests passed, 0 failed, 0 skipped (42 total tests)
