@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "record_type": "mainnet_safe_configuration",
+  "status": "CAPTURED",
+  "observation_started_utc": "2026-10-20T22:22:31.020610+00:00",
+  "observation_finished_utc": "2026-10-20T22:22:33.357206+00:00",
+  "chain_id": 56,
+  "endpoint": "https://bsc-rpc.publicnode.com",
+  "snapshot": {
+    "block_number": 128825311,
+    "block_hash": "0xfdcc4e98628f3e2df18ed232bf04726e24d41433a8ae7f8711a44f5767123ff0",
+    "block_timestamp_utc": "2026-10-20T22:22:31+00:00",
+    "block_parameter": {
+      "blockHash": "0xfdcc4e98628f3e2df18ed232bf04726e24d41433a8ae7f8711a44f5767123ff0",
+      "requireCanonical": true
+    },
+    "selection": "latest block before batch; not a finality claim"
+  },
+  "storage_slots": {
+    "singleton_slot0": "0x0",
+    "transaction_guard_slot": "0x4a204f620c8c5ccdca3fd54d003badd85ba500436a431f0cbda4f558c93c34c8",
+    "module_guard_slot": "0xb104e0b93118902c651344349b610029d694cfdec91c589c91ebafbcd0289947",
+    "fallback_handler_slot": "0x6c9a6c4a39284e37ed1cf53d337577d14212a4870fb976a4366c693b939918d5"
+  },
+  "safes": [
+    {
+      "label": "Safe_0 Admin",
+      "address": "0x6e7153abe3d9040059cbe6861f5219cd2327bc14",
+      "owners": [
+        "0xb72609fb717f84631d6b2207e832948b1b86d9e3",
+        "0xfeb99c8d622bb3028668086be92ac7346f781a52",
+        "0x30a2681481607bb594c3d15f24a5e740484598c1"
+      ],
+      "threshold": 2,
+      "owners_match_passport_set": true,
+      "threshold_matches_passport": true,
+      "reported_version": "1.5.0",
+      "nonce": 1,
+      "proxy_code_bytes": 123,
+      "proxy_code_sha256": "65cedaa2f11564271df8dc0c105817ad693d119253dd50eb8ca2b232e97f7b7f",
+      "modules_first_page": [],
+      "modules_next_pointer": "0x0000000000000000000000000000000000000001",
+      "module_enumeration_complete": true,
+      "standard_storage_addresses": {
+        "singleton_slot0": "0xedd160febbd92e350d4d398fb636302fccd67c7e",
+        "transaction_guard_slot": "0x0000000000000000000000000000000000000000",
+        "module_guard_slot": "0x0000000000000000000000000000000000000000",
+        "fallback_handler_slot": "0x3efcbb83a4a7afcb4f68d501e2c2203a38be77f4"
+      }
+    },
+    {
+      "label": "Safe_1 Minter",
+      "address": "0xb72609fb717f84631d6b2207e832948b1b86d9e3",
+      "owners": [
+        "0x9823e7401126bf5ebcc21bbb6174a74365ab9ced",
+        "0x031fc27d09bb5caa0f8d6a81b2e94c51dbcd06d2",
+        "0xe64619eeadce3ec495991a5f7fcc57cfb82b47cc"
+      ],
+      "threshold": 2,
+      "owners_match_passport_set": true,
+      "threshold_matches_passport": true,
+      "reported_version": "1.5.0",
+      "nonce": 2,
+      "proxy_code_bytes": 123,
+      "proxy_code_sha256": "65cedaa2f11564271df8dc0c105817ad693d119253dd50eb8ca2b232e97f7b7f",
+      "modules_first_page": [],
+      "modules_next_pointer": "0x0000000000000000000000000000000000000001",
+      "module_enumeration_complete": true,
+      "standard_storage_addresses": {
+        "singleton_slot0": "0xedd160febbd92e350d4d398fb636302fccd67c7e",
+        "transaction_guard_slot": "0x0000000000000000000000000000000000000000",
+        "module_guard_slot": "0x0000000000000000000000000000000000000000",
+        "fallback_handler_slot": "0x3efcbb83a4a7afcb4f68d501e2c2203a38be77f4"
+      }
+    },
+    {
+      "label": "Safe_2 Compliance",
+      "address": "0xfeb99c8d622bb3028668086be92ac7346f781a52",
+      "owners": [
+        "0xba9535a692450f4927602c9a57106f28c760d3c9",
+        "0x8ac4bd29bc14e0ce9fed164d262f166e9d9bb1c1",
+        "0xc289e5b5ee79ee247bec0a5fb9ba916c91463819"
+      ],
+      "threshold": 2,
+      "owners_match_passport_set": true,
+      "threshold_matches_passport": true,
+      "reported_version": "1.5.0",
+      "nonce": 2,
+      "proxy_code_bytes": 123,
+      "proxy_code_sha256": "65cedaa2f11564271df8dc0c105817ad693d119253dd50eb8ca2b232e97f7b7f",
+      "modules_first_page": [],
+      "modules_next_pointer": "0x0000000000000000000000000000000000000001",
+      "module_enumeration_complete": true,
+      "standard_storage_addresses": {
+        "singleton_slot0": "0xedd160febbd92e350d4d398fb636302fccd67c7e",
+        "transaction_guard_slot": "0x0000000000000000000000000000000000000000",
+        "module_guard_slot": "0x0000000000000000000000000000000000000000",
+        "fallback_handler_slot": "0x3efcbb83a4a7afcb4f68d501e2c2203a38be77f4"
+      }
+    },
+    {
+      "label": "Safe_3 Burner",
+      "address": "0x30a2681481607bb594c3d15f24a5e740484598c1",
+      "owners": [
+        "0x87eca386f107d13ddae5befcf5de13dcc251dc08",
+        "0x8b017a4068c4af2346f5076770c06c4216ca11bf",
+        "0x5d52c1e082aaaec7bb84b8c55f6a801e4967b1e8",
+        "0x245953fe1b00229c53e7b7c5b7093c3689dc5f0f",
+        "0x1484fdf3d66950684c9c574a1f8d2d63c21b6c2b"
+      ],
+      "threshold": 3,
+      "owners_match_passport_set": true,
+      "threshold_matches_passport": true,
+      "reported_version": "1.5.0",
+      "nonce": 1,
+      "proxy_code_bytes": 123,
+      "proxy_code_sha256": "65cedaa2f11564271df8dc0c105817ad693d119253dd50eb8ca2b232e97f7b7f",
+      "modules_first_page": [],
+      "modules_next_pointer": "0x0000000000000000000000000000000000000001",
+      "module_enumeration_complete": true,
+      "standard_storage_addresses": {
+        "singleton_slot0": "0xedd160febbd92e350d4d398fb636302fccd67c7e",
+        "transaction_guard_slot": "0x0000000000000000000000000000000000000000",
+        "module_guard_slot": "0x0000000000000000000000000000000000000000",
+        "fallback_handler_slot": "0x3efcbb83a4a7afcb4f68d501e2c2203a38be77f4"
+      }
+    },
+    {
+      "label": "Safe_4 Treasury",
+      "address": "0x60c63b66355b0107ec3faa4a916f9e956a79ddf8",
+      "owners": [
+        "0x02c857a65022b15179430ea36fede0787b881f1b",
+        "0x41d05e9ac18906e8d2dded673c7d4ed15e477549",
+        "0x9364b32be375d2614a47ead6574122914eca5cc9"
+      ],
+      "threshold": 2,
+      "owners_match_passport_set": true,
+      "threshold_matches_passport": true,
+      "reported_version": "1.5.0",
+      "nonce": 1,
+      "proxy_code_bytes": 123,
+      "proxy_code_sha256": "65cedaa2f11564271df8dc0c105817ad693d119253dd50eb8ca2b232e97f7b7f",
+      "modules_first_page": [],
+      "modules_next_pointer": "0x0000000000000000000000000000000000000001",
+      "module_enumeration_complete": true,
+      "standard_storage_addresses": {
+        "singleton_slot0": "0xedd160febbd92e350d4d398fb636302fccd67c7e",
+        "transaction_guard_slot": "0x0000000000000000000000000000000000000000",
+        "module_guard_slot": "0x0000000000000000000000000000000000000000",
+        "fallback_handler_slot": "0x3efcbb83a4a7afcb4f68d501e2c2203a38be77f4"
+      }
+    }
+  ],
+  "block_hash_rechecked": true,
+  "scope": [
+    "Safe configuration observations at the recorded fixed block.",
+    "Owners/threshold comparisons use the recorded operator baseline.",
+    "Singleton/fallback code comparison is documented in safe-code-identity.json.",
+    "VERSION alone is not proof of implementation identity.",
+    "Does not prove signer availability, key custody or recovery procedures.",
+    "No independently verified state proofs."
+  ]
+}

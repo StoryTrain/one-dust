@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "record_type": "explorer_verification_observation",
+  "status": "RECORDED",
+  "record_created_utc": "2026-10-21T08:58:27.876970+00:00",
+  "exact_browser_observation_utc": null,
+  "chain_id": 56,
+  "contract": "0x3713e7f7413f01019a9f63e9541b6e3ddef72c48",
+  "source": {
+    "type": "operator_supplied_page_transcription",
+    "url": "https://bscscan.com/address/0x3713e7f7413f01019a9f63e9541b6e3ddef72c48#code"
+  },
+  "reported_fields": {
+    "source_code_status": "Source Code Verified",
+    "match_type": "Exact Match",
+    "contract_name": "OneDust",
+    "compiler_version": "v0.8.37+commit.f401782d",
+    "optimization_enabled": false,
+    "optimizer_runs": 200,
+    "evm_version_display": "default evmVersion",
+    "license": "MIT",
+    "creator": "0xa42db27670fceb0f236aa5450396adcc9b5bfb01",
+    "creation_transaction": "0x0aa17ce92110056a7c5c2cf1dd1d1093b2ec3264537ab6d91ced01870a791926"
+  },
+  "scope": [
+    "Transcribed explorer observation, not an independent source-code API download.",
+    "Record creation time is not the exact browser observation time.",
+    "The displayed default evmVersion is retained literally.",
+    "Bytecode comparison is documented separately."
+  ]
+}

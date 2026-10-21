@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "record_type": "historical_safe_execution",
+  "status": "PASS",
+  "review_created_utc": "2026-10-20T22:45:47.813042+00:00",
+  "capture_started_utc": "2026-10-20T22:38:04.093634+00:00",
+  "capture_finished_utc": "2026-10-20T22:38:24.603394+00:00",
+  "chain_id": 56,
+  "passed_cases": 5,
+  "total_cases": 5,
+  "records": [
+    {
+      "label": "Safe_0 Admin",
+      "safe": "0x6e7153abe3d9040059cbe6861f5219cd2327bc14",
+      "transaction": "0x6eebd6159bec20690d1d9659c76dd9d893e906cdc35e4d27309c598b5ebb6912",
+      "safe_tx_hash_expected": "0xd46790e26446e9086169a94c80c21776cb25199d51471929912221c368f5b397",
+      "safe_tx_hash_observed": "0xd46790e26446e9086169a94c80c21776cb25199d51471929912221c368f5b397",
+      "block_number": 124272981,
+      "block_hash": "0xb1fe2877f3aac3b7feacad22816a47ff6cbbf0d6057403ef2443e958f0d84cba",
+      "block_timestamp_utc": "2026-09-27T04:59:32+00:00",
+      "outer_sender": "0x031fc27d09bb5caa0f8d6a81b2e94c51dbcd06d2",
+      "inner_destination": "0x489e4078497c85711e86021727716d3be48a7768",
+      "inner_value_wei": "1000000000000000",
+      "operation": 0,
+      "inner_data_bytes": 0,
+      "signature_blob_bytes": 130,
+      "safe_payment_base_units": "0",
+      "checks": {
+        "transaction_receipt_block_provenance_valid": true,
+        "external_transaction_targets_minter_safe": true,
+        "outer_exec_is_minter_to_admin_with_zero_value": true,
+        "outer_contains_nested_exec_transaction": true,
+        "inner_exec_is_admin_to_hot_operations": true,
+        "admin_transfers_0001_bnb_without_calldata": true,
+        "admin_execution_success_matches_passport": true,
+        "outer_safe_execution_success_follows_admin": true,
+        "no_admin_execution_failure_in_original_receipt": true
+      },
+      "status": "PASS",
+      "validation_mode": "nested_minter_safe_to_admin_safe",
+      "encoded_call_chain": [
+        {
+          "depth": 0,
+          "executing_address_from_encoded_call": "0xb72609fb717f84631d6b2207e832948b1b86d9e3",
+          "known_safe_label": "Safe_1 Minter",
+          "inner_destination": "0x6e7153abe3d9040059cbe6861f5219cd2327bc14",
+          "inner_value_wei": "0",
+          "operation": 0,
+          "inner_data_bytes": 548,
+          "inner_selector": "0x6a761202",
+          "signature_blob_bytes": 130,
+          "calls_another_exec_transaction": true
+        },
+        {
+          "depth": 1,
+          "executing_address_from_encoded_call": "0x6e7153abe3d9040059cbe6861f5219cd2327bc14",
+          "known_safe_label": "Safe_0 Admin",
+          "inner_destination": "0x489e4078497c85711e86021727716d3be48a7768",
+          "inner_value_wei": "1000000000000000",
+          "operation": 0,
+          "inner_data_bytes": 0,
+          "inner_selector": null,
+          "signature_blob_bytes": 130,
+          "calls_another_exec_transaction": false
+        }
+      ],
+      "execution_success_events": [
+        {
+          "safe": "0x6e7153abe3d9040059cbe6861f5219cd2327bc14",
+          "label": "Safe_0 Admin",
+          "log_index": 153,
+          "safe_tx_hash": "0xd46790e26446e9086169a94c80c21776cb25199d51471929912221c368f5b397"
+        },
+        {
+          "safe": "0xb72609fb717f84631d6b2207e832948b1b86d9e3",
+          "label": "Safe_1 Minter",
+          "log_index": 154,
+          "safe_tx_hash": "0x3e5ba957578e55b1062ce53c22850b73ef15fcf1019019bf73a7bc3dc8bde216"
+        }
+      ],
+      "signature_header_observations": [
+        {
+          "depth": 0,
+          "executing_safe": "0xb72609fb717f84631d6b2207e832948b1b86d9e3",
+          "headers": [
+            {
+              "position": 0,
+              "v": 1,
+              "type": "approved-hash",
+              "encoded_owner_for_v0_or_v1": "0x031fc27d09bb5caa0f8d6a81b2e94c51dbcd06d2",
+              "independently_validated": false
+            },
+            {
+              "position": 1,
+              "v": 28,
+              "type": "ECDSA",
+              "encoded_owner_for_v0_or_v1": null,
+              "independently_validated": false
+            }
+          ]
+        },
+        {
+          "depth": 1,
+          "executing_safe": "0x6e7153abe3d9040059cbe6861f5219cd2327bc14",
+          "headers": [
+            {
+              "position": 0,
+              "v": 1,
+              "type": "approved-hash",
+              "encoded_owner_for_v0_or_v1": "0xb72609fb717f84631d6b2207e832948b1b86d9e3",
+              "independently_validated": false
+            },
+            {
+              "position": 1,
+              "v": 1,
+              "type": "approved-hash",
+              "encoded_owner_for_v0_or_v1": "0xfeb99c8d622bb3028668086be92ac7346f781a52",
+              "independently_validated": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Safe_1 Minter",
+      "safe": "0xb72609fb717f84631d6b2207e832948b1b86d9e3",
+      "transaction": "0x53e26a41fd3a347a249af449a917047b0b5df0502b2ebb94c040b970f811b993",
+      "safe_tx_hash_expected": "0x201d9a57d8980fcd4906ace6b98186d978d672cfe61b79357848047200df99a6",
+      "safe_tx_hash_observed": "0x201d9a57d8980fcd4906ace6b98186d978d672cfe61b79357848047200df99a6",
+      "block_number": 123910936,
+      "block_hash": "0x5d867550c6923f554a89cf1b3006622540475bfc1f099a0141a812fefffb2e3c",
+      "block_timestamp_utc": "2026-09-25T07:43:25+00:00",
+      "outer_sender": "0x031fc27d09bb5caa0f8d6a81b2e94c51dbcd06d2",
+      "inner_destination": "0x489e4078497c85711e86021727716d3be48a7768",
+      "inner_value_wei": "1000000000000000",
+      "operation": 0,
+      "inner_data_bytes": 0,
+      "signature_blob_bytes": 130,
+      "safe_payment_base_units": "0",
+      "checks": {
+        "transaction_receipt_and_block_match": true,
+        "outer_receipt_success": true,
+        "exec_transaction_selector": true,
+        "ordinary_call": true,
+        "native_value_is_0001_bnb": true,
+        "inner_calldata_empty": true,
+        "execution_success_hash_matches_passport": true,
+        "no_execution_failure_from_this_safe": true
+      },
+      "status": "PASS"
+    },
+    {
+      "label": "Safe_2 Compliance",
+      "safe": "0xfeb99c8d622bb3028668086be92ac7346f781a52",
+      "transaction": "0x0caa670afbf02f13a037e9ce44f8ef6047c021d7fea90f3fd0db053adc4b9e97",
+      "safe_tx_hash_expected": "0xa8f5a3ddde459f17a6e8979ccd31570c16db8ef44b32487b070131851ce29e55",
+      "safe_tx_hash_observed": "0xa8f5a3ddde459f17a6e8979ccd31570c16db8ef44b32487b070131851ce29e55",
+      "block_number": 123916068,
+      "block_hash": "0x2510de3bad9031cd7bb3bae35d6f76de87aeab27b64372e37702439b56828fae",
+      "block_timestamp_utc": "2026-09-25T08:21:55+00:00",
+      "outer_sender": "0x8ac4bd29bc14e0ce9fed164d262f166e9d9bb1c1",
+      "inner_destination": "0x489e4078497c85711e86021727716d3be48a7768",
+      "inner_value_wei": "1000000000000000",
+      "operation": 0,
+      "inner_data_bytes": 0,
+      "signature_blob_bytes": 130,
+      "safe_payment_base_units": "0",
+      "checks": {
+        "transaction_receipt_and_block_match": true,
+        "outer_receipt_success": true,
+        "exec_transaction_selector": true,
+        "ordinary_call": true,
+        "native_value_is_0001_bnb": true,
+        "inner_calldata_empty": true,
+        "execution_success_hash_matches_passport": true,
+        "no_execution_failure_from_this_safe": true
+      },
+      "status": "PASS"
+    },
+    {
+      "label": "Safe_3 Burner",
+      "safe": "0x30a2681481607bb594c3d15f24a5e740484598c1",
+      "transaction": "0xdf2731b4dcae911bacde899b5e8d10e1f8e22637eb790d4ceadc64d621a161b0",
+      "safe_tx_hash_expected": "0x7e26ad0d4796349175fb6fa6287dcec63fd09f753a74395b74e35c1e2b8be29d",
+      "safe_tx_hash_observed": "0x7e26ad0d4796349175fb6fa6287dcec63fd09f753a74395b74e35c1e2b8be29d",
+      "block_number": 123922017,
+      "block_hash": "0x341c5093ce3faa555fd3c4f8b391b24d12100f97d834314f6f47baccd3b1dc4e",
+      "block_timestamp_utc": "2026-09-25T09:06:32+00:00",
+      "outer_sender": "0x5d52c1e082aaaec7bb84b8c55f6a801e4967b1e8",
+      "inner_destination": "0x489e4078497c85711e86021727716d3be48a7768",
+      "inner_value_wei": "1000000000000000",
+      "operation": 0,
+      "inner_data_bytes": 0,
+      "signature_blob_bytes": 195,
+      "safe_payment_base_units": "0",
+      "checks": {
+        "transaction_receipt_and_block_match": true,
+        "outer_receipt_success": true,
+        "exec_transaction_selector": true,
+        "ordinary_call": true,
+        "native_value_is_0001_bnb": true,
+        "inner_calldata_empty": true,
+        "execution_success_hash_matches_passport": true,
+        "no_execution_failure_from_this_safe": true
+      },
+      "status": "PASS"
+    },
+    {
+      "label": "Safe_4 Treasury",
+      "safe": "0x60c63b66355b0107ec3faa4a916f9e956a79ddf8",
+      "transaction": "0x9cd47a8888849ba878203d3741c700a77fb52713eabf9d00514e35214ddb3369",
+      "safe_tx_hash_expected": "0x13a8e9172f94f9dbfab2cc6f2032723a1b71939e0ae485b96b4b2b44e6437b12",
+      "safe_tx_hash_observed": "0x13a8e9172f94f9dbfab2cc6f2032723a1b71939e0ae485b96b4b2b44e6437b12",
+      "block_number": 123925779,
+      "block_hash": "0x12169d56e769cd059032e09da277ba426bbc92f951390bd227a70c13b7131c86",
+      "block_timestamp_utc": "2026-09-25T09:34:46+00:00",
+      "outer_sender": "0x41d05e9ac18906e8d2dded673c7d4ed15e477549",
+      "inner_destination": "0x489e4078497c85711e86021727716d3be48a7768",
+      "inner_value_wei": "1000000000000000",
+      "operation": 0,
+      "inner_data_bytes": 0,
+      "signature_blob_bytes": 130,
+      "safe_payment_base_units": "0",
+      "checks": {
+        "transaction_receipt_and_block_match": true,
+        "outer_receipt_success": true,
+        "exec_transaction_selector": true,
+        "ordinary_call": true,
+        "native_value_is_0001_bnb": true,
+        "inner_calldata_empty": true,
+        "execution_success_hash_matches_passport": true,
+        "no_execution_failure_from_this_safe": true
+      },
+      "status": "PASS"
+    }
+  ],
+  "transaction_evidence": "docs/test-evidence/mainnet/safe-transactions.json",
+  "admin_preapproval_evidence": "docs/test-evidence/mainnet/safe-admin-approval.json",
+  "scope": [
+    "Five historical native-BNB test executions, not OneDust mint/burn tests.",
+    "Four direct calls; Admin is checked as nested Safe_1 -> Safe_0 execution.",
+    "Checks calldata, receipts, block references and ExecutionSuccess events.",
+    "Safe_2 preapproval is documented separately.",
+    "No independent ECDSA recovery or complete historical owner-state reconstruction.",
+    "Calldata nesting is not a full EVM execution trace."
+  ]
+}

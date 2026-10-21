@@ -1,0 +1,5 @@
+# Mainnet evidence formatting and byte preservation.
+*.json text eol=lf
+*.md text eol=lf
+*.hex -text
+.gitattributes text eol=lf

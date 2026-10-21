@@ -12,7 +12,8 @@ execution sequence, or integration has been covered.
 - Recorded local regression: 2026-10-20, 42 passed, 0 failed, 0 skipped.
 - Testnet contract: `0x90d12Fc13A445337285Ae94F4a83295058076E1d`;
   chain ID 97.
-- Mainnet checks are outside this matrix.
+- This matrix remains local/Testnet in scope. Separately scoped
+  [mainnet results](test-evidence/mainnet/README.md) are indexed elsewhere.
 
 ## Evidence references
 

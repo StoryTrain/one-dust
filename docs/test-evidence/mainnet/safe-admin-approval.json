@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "record_type": "historical_admin_safe_preapproval",
+  "status": "PASS",
+  "chain_id": 56,
+  "endpoint": "https://bsc-dataseed.bnbchain.org",
+  "observation_started_utc": "2026-10-20T22:57:11.096175+00:00",
+  "observation_finished_utc": "2026-10-20T22:57:15.448122+00:00",
+  "candidate_transaction": "0xb77c8ca650c4f47bed3572b73915a665daba8abd30ca6804898ec63a778db2e8",
+  "admin": "0x6e7153abe3d9040059cbe6861f5219cd2327bc14",
+  "approving_safe": "0xfeb99c8d622bb3028668086be92ac7346f781a52",
+  "expected_admin_safe_tx_hash": "0xd46790e26446e9086169a94c80c21776cb25199d51471929912221c368f5b397",
+  "checks": {
+    "transaction_receipt_and_block_match": true,
+    "outer_receipt_success": true,
+    "outer_exec_transaction": true,
+    "inner_target_is_admin": true,
+    "inner_value_zero_and_operation_call": true,
+    "inner_call_is_exact_expected_approve_hash": true,
+    "one_matching_approval_from_admin_for_safe2": true,
+    "one_safe2_execution_success": true,
+    "no_safe2_execution_failure": true,
+    "approval_event_precedes_safe2_execution_success": true,
+    "approval_transaction_precedes_admin_execution": true
+  },
+  "outer_sender": "0x8ac4bd29bc14e0ce9fed164d262f166e9d9bb1c1",
+  "outer_destination": "0xfeb99c8d622bb3028668086be92ac7346f781a52",
+  "inner_destination": "0x6e7153abe3d9040059cbe6861f5219cd2327bc14",
+  "inner_value_wei": "0",
+  "inner_operation": 0,
+  "inner_data_hex": "0xd4d9bdcdd46790e26446e9086169a94c80c21776cb25199d51471929912221c368f5b397",
+  "approval_block": 124272063,
+  "approval_block_hash": "0xb56c13b71222ba2feadf679e238c8f1ba519a206d8d9eddb9a3128edfe93ae8e",
+  "approval_utc": "2026-09-27T04:52:38+00:00",
+  "approval_events": [
+    {
+      "approved_hash": "0xd46790e26446e9086169a94c80c21776cb25199d51471929912221c368f5b397",
+      "owner": "0xfeb99c8d622bb3028668086be92ac7346f781a52",
+      "log_index": 187
+    }
+  ],
+  "safe2_execution_success_events": [
+    {
+      "safe_tx_hash": "0x5c74c8e18a18493e85d9fbd07b4c4438665a7a4198f6894bba734ee9d616bb3e",
+      "log_index": 188
+    }
+  ],
+  "later_admin_execution": {
+    "transaction": "0x6eebd6159bec20690d1d9659c76dd9d893e906cdc35e4d27309c598b5ebb6912",
+    "block_number": 124272981,
+    "transaction_index": 44
+  },
+  "transaction_evidence": "docs/test-evidence/mainnet/safe-transactions.json",
+  "scope": [
+    "Safe_2 called Admin.approveHash for the recorded Admin transaction hash.",
+    "ApproveHash and Safe_2 ExecutionSuccess were verified.",
+    "Approval preceded the recorded nested Admin execution.",
+    "No independent ECDSA recovery or historical owner-state reconstruction."
+  ]
+}

@@ -1,11 +1,12 @@
 # One Dust (1DUST) — Contract
 
 Foundry project containing the One Dust token contract, local tests,
-and documented BNB Smart Chain Testnet checks.
+and documented BNB Smart Chain Testnet and Mainnet evidence.
 
 The token has been deployed on BNB Smart Chain Testnet and Mainnet.
-The checks documented in this evidence set cover local execution and
-Testnet; they do not establish validation of the Mainnet deployment.
+Network-specific evidence covers deployment comparisons, scoped state
+observations and selected historical executions. Limits are documented
+separately; deployment is not equivalent to public-launch readiness.
 
 The contract provides role-controlled minting to Treasury-role recipients,
 address freezing, ordinary burns, and privileged burning of frozen balances.
@@ -17,6 +18,10 @@ operational controls must be considered separately from test results.
 Documented testnet contract:
 `0x90d12Fc13A445337285Ae94F4a83295058076E1d` (chain ID 97).
 
+Documented mainnet contract:
+`0x3713e7f7413f01019a9f63e9541b6e3ddef72c48` (chain ID 56).
+See the [Mainnet Genesis Report](docs/build-evidence/mainnet/Genesis-Report.md).
+
 See [the test log](docs/Test-Log.md) for dated checks and limitations.
 The latest recorded local regression completed on 2026-10-20:
 42 tests passed, 0 failed, 0 skipped.
@@ -26,9 +31,10 @@ with 0 failures and 0 skipped. These are separate executions, not one
 recorded full 45-test run. See the
 [edge-case report](docs/test-evidence/local/edge-cases.json).
 
-This repository does not establish mainnet Safe configuration or operational
-readiness. Test results are not an independent security audit or a security
-guarantee.
+Mainnet Safe configuration and selected historical executions are documented.
+This does not establish signer availability, key custody, recovery readiness,
+or approval to launch liquidity. Test results are not an independent security
+audit or a security guarantee.
 
 ## Requirements and setup
 
@@ -68,8 +74,11 @@ of the recorded control run. Its settings are documented in the test log.
   network evidence, and open items.
 - [Slither review](docs/Slither-Review.md) — disposition of the five
   historical informational findings.
-- [Build evidence](docs/build-evidence/testnet/README.md) — saved compilation
-  and deployment-comparison materials for the documented testnet contract.
+- [Testnet build evidence](docs/build-evidence/testnet/README.md) — saved
+  compilation and deployment comparisons.
+- [Mainnet build evidence](docs/build-evidence/mainnet/README.md) and
+  [mainnet verification evidence](docs/test-evidence/mainnet/README.md) —
+  deployment, fixed-block observations, Safe execution and token history.
 
 ## Security
 

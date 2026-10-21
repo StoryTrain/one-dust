@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "record_type": "mainnet_fixed_block_token_state",
+  "status": "CAPTURED",
+  "exported_utc": "2026-10-21T09:03:24.279722+00:00",
+  "observation_started_utc": "2026-10-20T22:06:15.670970+00:00",
+  "observation_finished_utc": "2026-10-20T22:06:18.046139+00:00",
+  "chain_id": 56,
+  "contract": "0x3713e7f7413f01019a9f63e9541b6e3ddef72c48",
+  "endpoint": "https://bsc-rpc.publicnode.com",
+  "snapshot": {
+    "block_number": 128823144,
+    "block_hash": "0x27b6b1624f9dba61a4e0ca0b82f492cb9a98d424eaf9278053e8f19bb19a55eb",
+    "block_timestamp_utc": "2026-10-20T22:06:16+00:00",
+    "call_block_parameter": {
+      "blockHash": "0x27b6b1624f9dba61a4e0ca0b82f492cb9a98d424eaf9278053e8f19bb19a55eb",
+      "requireCanonical": true
+    },
+    "selection": "latest block observed before batch; not a finality claim"
+  },
+  "token": {
+    "name": "One Dust",
+    "symbol": "1DUST",
+    "decimals": 18,
+    "initial_supply_base_units": "50000000000000000000000000",
+    "total_supply_base_units": "50000000000000000000000000"
+  },
+  "accounts": [
+    {
+      "label": "Admin",
+      "address": "0x6e7153abe3d9040059cbe6861f5219cd2327bc14",
+      "balance_base_units": "0",
+      "is_frozen": false,
+      "roles": {
+        "DEFAULT_ADMIN_ROLE": true,
+        "MINTER_ROLE": false,
+        "COMPLIANCE_ROLE": false,
+        "BURNER_ROLE": false,
+        "TREASURY_ROLE": false
+      }
+    },
+    {
+      "label": "Minter",
+      "address": "0xb72609fb717f84631d6b2207e832948b1b86d9e3",
+      "balance_base_units": "0",
+      "is_frozen": false,
+      "roles": {
+        "DEFAULT_ADMIN_ROLE": false,
+        "MINTER_ROLE": true,
+        "COMPLIANCE_ROLE": false,
+        "BURNER_ROLE": false,
+        "TREASURY_ROLE": false
+      }
+    },
+    {
+      "label": "Compliance",
+      "address": "0xfeb99c8d622bb3028668086be92ac7346f781a52",
+      "balance_base_units": "0",
+      "is_frozen": false,
+      "roles": {
+        "DEFAULT_ADMIN_ROLE": false,
+        "MINTER_ROLE": false,
+        "COMPLIANCE_ROLE": true,
+        "BURNER_ROLE": false,
+        "TREASURY_ROLE": false
+      }
+    },
+    {
+      "label": "Burner",
+      "address": "0x30a2681481607bb594c3d15f24a5e740484598c1",
+      "balance_base_units": "0",
+      "is_frozen": false,
+      "roles": {
+        "DEFAULT_ADMIN_ROLE": false,
+        "MINTER_ROLE": false,
+        "COMPLIANCE_ROLE": false,
+        "BURNER_ROLE": true,
+        "TREASURY_ROLE": false
+      }
+    },
+    {
+      "label": "Treasury",
+      "address": "0x60c63b66355b0107ec3faa4a916f9e956a79ddf8",
+      "balance_base_units": "50000000000000000000000000",
+      "is_frozen": false,
+      "roles": {
+        "DEFAULT_ADMIN_ROLE": false,
+        "MINTER_ROLE": false,
+        "COMPLIANCE_ROLE": false,
+        "BURNER_ROLE": false,
+        "TREASURY_ROLE": true
+      }
+    },
+    {
+      "label": "Deployer",
+      "address": "0xa42db27670fceb0f236aa5450396adcc9b5bfb01",
+      "balance_base_units": "0",
+      "is_frozen": false,
+      "roles": {
+        "DEFAULT_ADMIN_ROLE": false,
+        "MINTER_ROLE": false,
+        "COMPLIANCE_ROLE": false,
+        "BURNER_ROLE": false,
+        "TREASURY_ROLE": false
+      }
+    }
+  ],
+  "comparisons": {
+    "listed_address_role_matrix_matches_initial_assignments": true,
+    "total_supply_equals_initial_supply": true,
+    "treasury_holds_entire_current_supply": true
+  },
+  "block_hash_rechecked": true,
+  "scope": [
+    "47 view calls at one blockHash with requireCanonical=true.",
+    "State role checks cover the six listed addresses.",
+    "Complete returned role-event history is documented in event-history.json.",
+    "One RPC provider; no independently verified state proofs."
+  ]
+}

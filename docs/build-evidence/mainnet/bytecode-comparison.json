@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "record_type": "mainnet_bytecode_and_constructor_comparison",
+  "status": "PASS",
+  "comparison_created_utc": "2026-10-20T21:48:47.346022+00:00",
+  "network": "BNB Smart Chain Mainnet",
+  "chain_id": 56,
+  "contract": "0x3713e7f7413f01019a9f63e9541b6e3ddef72c48",
+  "deployment_transaction": "0x0aa17ce92110056a7c5c2cf1dd1d1093b2ec3264537ab6d91ced01870a791926",
+  "source": {
+    "path": "src/OneDust.sol",
+    "sha256": "6c0d64c392d93fde32c23ad4e990149b822b544224cdecbb9bbdc1aa0ad063ff"
+  },
+  "compiler_input_reference": {
+    "path": "docs/build-evidence/testnet/OneDust_verify_standard_input.json",
+    "sha256": "b36bf235241a0e761a40f3f70e9968bcc8fec1d31c8ae1a5a1b8b997192baf78",
+    "provenance": "Retained testnet input reused as the build candidate."
+  },
+  "earlier_compiler_reproduction_reference": {
+    "path": "docs/build-evidence/testnet/compiler-reproduction.json",
+    "sha256": "6afcc727c6d8dc022aafb2721c26b66aac0f1ddc9d88872fa19a9f712601c269"
+  },
+  "checks": {
+    "runtime_matches_saved_testnet_runtime": true,
+    "creation_code_matches_saved_testnet_deployment": true,
+    "constructor_addresses_match_address_book": true,
+    "full_input_matches_reference_creation_plus_expected_mainnet_arguments": true
+  },
+  "reference_files": {
+    "docs/build-evidence/testnet/deployment-transaction.json": "13c7f6b1c25c4eb39ebc5a242657904ac20908cac1e49a169512e0e7466f3bd1",
+    "docs/build-evidence/testnet/OneDust_onchain_runtime.hex": "5ae723f0b5f72960f13b50c9cfdf873c5567e629e76d7365b0eb3c79f46cafae",
+    "docs/build-evidence/testnet/compiler-reproduction.json": "6afcc727c6d8dc022aafb2721c26b66aac0f1ddc9d88872fa19a9f712601c269"
+  },
+  "runtime_snapshot": {
+    "block_number": 128819984,
+    "block_hash": "0xfcf9230ae8a1f559adcb3e4aac12a49eddfca723034521677a0cfec15c7041c9",
+    "block_timestamp_utc": "2026-10-20T21:42:34+00:00",
+    "runtime_bytes": 10071,
+    "runtime_sha256_decoded": "5450d9d0d05826f2cc70ec600d058084aeb6740286dadd21fbe902d77f171252",
+    "block_hash_rechecked": true
+  },
+  "constructor_addresses": [
+    {
+      "position": 0,
+      "role": "Admin",
+      "observed_address": "0x6e7153abe3d9040059cbe6861f5219cd2327bc14",
+      "expected_from_address_book": "0x6e7153abe3d9040059cbe6861f5219cd2327bc14",
+      "matches": true
+    },
+    {
+      "position": 1,
+      "role": "Minter",
+      "observed_address": "0xb72609fb717f84631d6b2207e832948b1b86d9e3",
+      "expected_from_address_book": "0xb72609fb717f84631d6b2207e832948b1b86d9e3",
+      "matches": true
+    },
+    {
+      "position": 2,
+      "role": "Compliance",
+      "observed_address": "0xfeb99c8d622bb3028668086be92ac7346f781a52",
+      "expected_from_address_book": "0xfeb99c8d622bb3028668086be92ac7346f781a52",
+      "matches": true
+    },
+    {
+      "position": 3,
+      "role": "Burner",
+      "observed_address": "0x30a2681481607bb594c3d15f24a5e740484598c1",
+      "expected_from_address_book": "0x30a2681481607bb594c3d15f24a5e740484598c1",
+      "matches": true
+    },
+    {
+      "position": 4,
+      "role": "Treasury",
+      "observed_address": "0x60c63b66355b0107ec3faa4a916f9e956a79ddf8",
+      "expected_from_address_book": "0x60c63b66355b0107ec3faa4a916f9e956a79ddf8",
+      "matches": true
+    }
+  ],
+  "creation_bytes": 14627,
+  "constructor_argument_bytes": 160,
+  "deployment_input_bytes": 14787,
+  "runtime_bytes": 10071,
+  "creation_sha256_decoded": "0dd3f6aad16a7394cbbdbb5d2344aa1a5fc492536650f366cbf04af9adff3880",
+  "constructor_arguments_sha256_decoded": "8c773ee8fc34fba32d46ab537a807ebb934e39b061f31bd529b50d4cf2619135",
+  "deployment_input_sha256_decoded": "43a5dd8e5ecc11775c6f5035deb843da12b1cdc900c868932eebe5bf5ae07f02",
+  "runtime_sha256_decoded": "5450d9d0d05826f2cc70ec600d058084aeb6740286dadd21fbe902d77f171252",
+  "scope": [
+    "Full byte comparisons; metadata was not stripped.",
+    "Uses captured mainnet transaction/runtime and retained testnet artifacts.",
+    "Earlier compiler reproduction is a separate recorded execution.",
+    "No fresh compilation was performed for this comparison/export.",
+    "Runtime is observed at its recorded block, not queried at deployment block.",
+    "Not an independent security audit."
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "record_type": "safe_singleton_and_fallback_code_identity",
+  "status": "PASS",
+  "observation_started_utc": "2026-10-20T22:27:12.121485+00:00",
+  "observation_finished_utc": "2026-10-20T22:27:17.234433+00:00",
+  "chain_id": 56,
+  "endpoint": "https://bsc-rpc.publicnode.com",
+  "snapshot": {
+    "block_number": 128825941,
+    "block_hash": "0x68bab8c49bd867ef159b48febb3ae24aa85b93b0e8e5588871c8596a6d85e78d",
+    "block_timestamp_utc": "2026-10-20T22:27:15+00:00",
+    "block_parameter": {
+      "blockHash": "0x68bab8c49bd867ef159b48febb3ae24aa85b93b0e8e5588871c8596a6d85e78d",
+      "requireCanonical": true
+    },
+    "selection": "latest before batch; not a finality claim"
+  },
+  "registry_repository": "safe-global/safe-deployments",
+  "registry_commit": "e9cc9798ab834e7fe515d361566eb4a28c65387f",
+  "registry_comparisons": [
+    {
+      "contract_name": "SafeL2",
+      "address": "0xedd160febbd92e350d4d398fb636302fccd67c7e",
+      "registry_path": "src/assets/v1.5.0/safe_l2.json",
+      "registry_asset_sha256": "de042946153befeb3c68679760749e27116d5a8af087bd066d9a6181f15f72d1",
+      "deployment_tags": [
+        "canonical"
+      ],
+      "expected_code_hash": "0x180193227186ccb85316c94db1f0d156ed932b14712cfaac78901899178572dc",
+      "code_bytes": 22231,
+      "observed_code_hash": "0x180193227186ccb85316c94db1f0d156ed932b14712cfaac78901899178572dc",
+      "code_sha256": "d0e4c02941ed62451756b19546f44c928cba43d509e64db0b5fd44487cb89df4",
+      "matches": true
+    },
+    {
+      "contract_name": "CompatibilityFallbackHandler",
+      "address": "0x3efcbb83a4a7afcb4f68d501e2c2203a38be77f4",
+      "registry_path": "src/assets/v1.5.0/compatibility_fallback_handler.json",
+      "registry_asset_sha256": "b121f93c5501d33364a73359cdd361986f0ba540448ff8531587035185b0029f",
+      "deployment_tags": [
+        "canonical"
+      ],
+      "expected_code_hash": "0x3c6a85bcf7b563daa624b884b4e9a1b9fa5371edde7be945d998071a48f28bbc",
+      "code_bytes": 6294,
+      "observed_code_hash": "0x3c6a85bcf7b563daa624b884b4e9a1b9fa5371edde7be945d998071a48f28bbc",
+      "code_sha256": "53aa65adde7b126fb58e58017f20178ab98b43cdaf074683fc36f80a093ec182",
+      "matches": true
+    }
+  ],
+  "safe_pointer_and_proxy_consistency": [
+    {
+      "safe": "0x6e7153abe3d9040059cbe6861f5219cd2327bc14",
+      "singleton_unchanged": true,
+      "fallback_unchanged": true,
+      "proxy_code_unchanged": true
+    },
+    {
+      "safe": "0xb72609fb717f84631d6b2207e832948b1b86d9e3",
+      "singleton_unchanged": true,
+      "fallback_unchanged": true,
+      "proxy_code_unchanged": true
+    },
+    {
+      "safe": "0xfeb99c8d622bb3028668086be92ac7346f781a52",
+      "singleton_unchanged": true,
+      "fallback_unchanged": true,
+      "proxy_code_unchanged": true
+    },
+    {
+      "safe": "0x30a2681481607bb594c3d15f24a5e740484598c1",
+      "singleton_unchanged": true,
+      "fallback_unchanged": true,
+      "proxy_code_unchanged": true
+    },
+    {
+      "safe": "0x60c63b66355b0107ec3faa4a916f9e956a79ddf8",
+      "singleton_unchanged": true,
+      "fallback_unchanged": true,
+      "proxy_code_unchanged": true
+    }
+  ],
+  "block_hash_rechecked": true,
+  "scope": [
+    "Singleton and fallback Keccak-256 match the pinned official Safe registry.",
+    "Pointers and proxy code agree with the preceding configuration observation.",
+    "Proxy code was checked for consistency, not independent official provenance.",
+    "Not an independent security audit."
+  ]
+}
