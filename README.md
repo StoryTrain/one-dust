@@ -1,3 +1,5 @@
+![One Dust (1DUST) — Token contract, documentation and verification evidence](assets/one-dust-banner.png)
+
 # One Dust (1DUST) — Contract
 
 Foundry project containing the One Dust token contract, local tests,
@@ -42,6 +44,7 @@ audit or a security guarantee.
 - [Operational Policy](docs/Operational-Policy.md)
 - [Mint Governance](docs/Mint-Governance.md)
 - [Official Resources](docs/Official-Resources.md)
+- [Brand assets](assets/brand/README.md)
 
 ## Requirements and setup
 
