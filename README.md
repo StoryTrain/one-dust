@@ -36,6 +36,13 @@ This does not establish signer availability, key custody, recovery readiness,
 or approval to launch liquidity. Test results are not an independent security
 audit or a security guarantee.
 
+## Project documentation
+
+- [White Paper](docs/White-Paper.md)
+- [Operational Policy](docs/Operational-Policy.md)
+- [Mint Governance](docs/Mint-Governance.md)
+- [Official Resources](docs/Official-Resources.md)
+
 ## Requirements and setup
 
 - Foundry; the recorded regression used Forge 1.8.3.
@@ -85,3 +92,13 @@ of the recorded control run. Its settings are documented in the test log.
 Never commit recovery phrases, private keys, passwords, API keys, keystores,
 or `.env` files. Do not sign deployment or administrative transactions based
 solely on this README.
+
+## License
+
+The One Dust token contract source code in `src/OneDust.sol` is
+licensed under the MIT License. See [LICENSE](LICENSE).
+
+Third-party dependencies remain subject to their respective licenses.
+This license notice does not grant rights to the One Dust name, logos,
+or other branding, and does not apply to the project's policy documents
+or verification records.

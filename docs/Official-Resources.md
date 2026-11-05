@@ -10,7 +10,7 @@ This register contains the official project links confirmed by the One Dust team
 | X | [@1dust_token](https://x.com/1dust_token) |
 | Telegram channel | [OneDust_1DUST](https://t.me/OneDust_1DUST) |
 | Telegram group | [OneDust_Chat](https://t.me/OneDust_Chat) |
-| Discord | [One Dust server](https://discord.gg/dJu38SVMrz) |
+| Discord | [One Dust server](https://discord.gg/P2b7eeCpBv) |
 | Contact email | [OneDust.project@gmail.com](mailto:OneDust.project@gmail.com) |
 | GitHub repository | [StoryTrain/one-dust](https://github.com/StoryTrain/one-dust) |
 
